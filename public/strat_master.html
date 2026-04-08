@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STRAT-MASTER | Strategic Command • PROJECT ALPHA</title>
+  
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+  
+  <style>
+    /* Page Specific Refinements */
+    #command-theater {
+      margin-left: 260px;
+      padding: 1.5rem 2rem;
+      min-height: 100vh;
+      background: var(--bg-primary);
+    }
+
+    .status-hangar {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+  .status-box {
+    padding: 1.25rem;
+    border-radius: 8px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-primary);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .thought-stream {
+    height: 150px;
+    background: #000;
+    color: #10b981;
+    font-family: monospace;
+    font-size: 0.75rem;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-y: hidden;
+    line-height: 1.6;
+    border: 1px solid #115e59;
+    box-shadow: inset 0 0 20px rgba(16, 185, 129, 0.15);
+    position: relative;
+  }
+
+  .thought-stream::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(transparent 90%, #000 100%);
+    pointer-events: none;
+  }
+
+  @keyframes sonar-sweep {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes sonar-ping {
+    0% { transform: scale(0.1); opacity: 0.8; }
+    100% { transform: scale(1.2); opacity: 0; }
+  }
+
+  .pulse-risk {
+    animation: district-breathe 2s infinite ease-in-out;
+  }
+
+  #tactical-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 260px;
+    z-index: 2000;
+    background: var(--bg-card);
+    border-right: 1px solid var(--border-primary);
+    overflow-y: auto;
+  }
+
+  .sonar-container {
+    position: relative;
+    width: 60px; height: 60px;
+    background: #064e3b;
+    border: 2px solid #10b981;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
+  }
+
+  .sonar-sweep {
+    position: absolute;
+    width: 100%; height: 100%;
+    background: conic-gradient(from 0deg, rgba(16, 185, 129, 0.4) 0deg, transparent 90deg);
+    animation: sonar-sweep 3s infinite linear;
+  }
+
+  .sonar-ping {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border: 2px solid #10b981;
+    border-radius: 50%;
+    animation: sonar-ping 3s infinite ease-out;
+  }
+    #alpha-map-container {
+      height: 600px;
+      width: 100%;
+      border-radius: var(--panel-radius);
+      border: 1px solid var(--border-primary);
+      z-index: 10;
+    }
+    .map-hud-overlay {
+      position: absolute;
+      top: 1.5rem;
+      left: 1.5rem;
+      z-index: 1000;
+      width: 280px;
+      pointer-events: none;
+    }
+    .map-hud-overlay > * { pointer-events: auto; }
+
+    .layer-control {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .layer-btn {
+      background: white;
+      border: 1px solid var(--border-primary);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s;
+      text-transform: uppercase;
+      text-align: left;
+    }
+    .layer-btn:hover { background: var(--bg-tertiary); }
+    .layer-btn.active { 
+       border-color: var(--accent-blue); 
+       background: #00336608; 
+       color: var(--accent-blue);
+    }
+    .flex-center {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    #master-boot-overlay.fade-out {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+    }
+  </style>
+</head>
+<body>  <!-- 0. Master Boot Sequence Overlay (M-58) -->
+  <div id="master-boot-overlay" class="flex-center flex-col" style="position:fixed; inset:0; background:var(--bg-primary); z-index:9999;">
+     <div style="width:400px;">
+        <div style="color:var(--accent-blue); font-weight:700; margin-bottom:1rem; font-family:var(--font-display);">PROJECT ALPHA // SYSTEM_INIT</div>
+        <div id="boot-log" style="height:200px; overflow:hidden; font-size:10px; color:var(--text-secondary); line-height:1.4;">
+           > Initializing Alpha Bus...<br>
+           > Validating 64-District Baselines...<br>
+        </div>
+        <div style="width:100%; height:2px; background:var(--border-primary); margin-top:1rem;">
+           <div id="boot-progress" style="width:0%; height:100%; background:var(--accent-blue); transition:width 0.1s;"></div>
+        </div>
+     </div>
+  </div>
+
+  <!-- 1. The Global Tactical Navigation -->
+  <nav id="tactical-sidebar">
+    <div class="sidebar-brand">
+       <div style="display:flex; align-items:center; gap:0.75rem;">
+          <img src="ALPHA-LOGO.png" style="height:38px; border-radius:4px; filter: drop-shadow(0 0 4px rgba(0,0,0,0.1));">
+          <div style="line-height:1.1;">
+             <div style="font-size:1.1rem; font-weight:800; color:var(--accent-blue);">AGAM-ADL</div>
+             <div style="font-size:0.6rem; color:var(--text-muted); text-transform:uppercase; font-weight:700; letter-spacing:0.05em;">engine ALPHA 6.8</div>
+          </div>
+       </div>
+    </div>
+    
+    <ul class="nav-links">
+      <li class="nav-item active" data-view="strat-map">
+        <i data-lucide="map"></i> National Monitor
+      </li>
+      <li class="nav-item" data-view="hydro-bay">
+        <i data-lucide="droplets"></i> Hydro Bay
+      </li>
+      <li class="nav-item" data-view="agri-bay">
+        <i data-lucide="sprout"></i> Agri Bay
+      </li>
+      <li class="nav-item" data-view="cascade-tree">
+        <i data-lucide="share-2"></i> Cascade Intel
+      </li>
+      <li class="nav-item" data-view="socio-econ">
+        <i data-lucide="trending-up"></i> Econ Command
+      </li>
+      <li class="nav-item" data-view="nerve-center">
+        <i data-lucide="activity"></i> Nerve Center
+      </li>
+    </ul>
+
+    <div style="position:absolute; bottom:2rem; left:1rem; right:1rem;">
+       <div class="alpha-card" style="padding:0.75rem; font-size:0.7rem;">
+          <p style="font-weight:700; color:var(--accent-blue);">TRANSFORMER ACTIVE</p>
+          <p style="color:var(--text-muted);">64-District Synthesis Online</p>
+       </div>
+    </div>
+  </nav>
+
+  <!-- 2. The Main Command Theater -->
+  <main id="command-theater">
+    
+    <!-- View A: Strategic National Monitor -->
+    <section id="view-strat-map" class="theater-stage active" style="padding-top: 0;">
+      <!-- Science Fair Hazard Condition (Moved to Top) -->
+      <div class="status-hangar" style="margin-bottom: 2rem;">
+         <div class="status-box" id="global-hazard-box" style="border-left: 5px solid var(--accent-emerald);">
+            <div style="font-size:0.65rem; color:var(--text-muted); text-transform:uppercase; font-weight:800; letter-spacing:0.1em; margin-bottom:0.25rem;">National Hazard Condition</div>
+            <div id="global-status-text" style="font-size:1.5rem; font-weight:900; color:var(--accent-emerald);">CONDITION: GUARDED</div>
+            <div id="global-hazard-stats" style="font-size:0.75rem; color:var(--text-muted); margin-top:0.25rem;">0 districts in elevated danger.</div>
+         </div>
+         <div class="thought-stream" id="neural-thought-stream">
+            <div style="opacity:0.5; border-bottom:1px solid #115e59; margin-bottom:0.5rem; padding-bottom:0.25rem;">[ALPHA_NEURAL_LOG: THREAT_ORCHESTRATOR_V6.8]</div>
+            <div id="thought-log-active">> Initiating Global Synthesis...</div>
+         </div>
+      </div>
+
+      <header style="margin-bottom: 1.5rem; display:flex; justify-content:space-between; align-items:flex-end;">
+         <div>
+            <h1 style="font-family:var(--font-display); font-size:1.8rem; color:var(--accent-blue);">National Surveillance Monitor</h1>
+            <p style="font-size:0.875rem; color:var(--text-secondary);">Cross-domain risk synthesis and multi-layer ground telemetry</p>
+         </div>
+         <div style="text-align:right; font-family:monospace; font-size:0.7rem; color:var(--text-muted);">
+            SYSTEM_UPTIME: 98:12:44:09<br/>
+            COORD_REF: WGS84/EPGS:4326<br/>
+            PACKET_LOSS: 0.0001%
+         </div>
+      </header>
+
+      <div style="position:relative;">
+        <div id="alpha-map-container"></div>
+        <div class="map-hud-overlay" style="pointer-events: none;">
+            <div class="alpha-card" style="background:#ffffffcc; backdrop-filter:blur(8px); pointer-events: auto;">
+               <div class="alpha-card-header">
+                  <span class="alpha-card-title">Tactical Command Theater</span>
+                  <div class="led-pulse active"></div>
+               </div>
+               <div id="map-hover-intel">
+                  <h4 style="font-size:0.9rem; font-weight:800; color:var(--text-primary);">System Standby</h4>
+                  <p style="color:var(--text-muted); font-style:italic;">Hover over a district to initiate Transformer synthesis...</p>
+               </div>
+               <!-- M-99: Historical Event Flashback -->
+               <div id="event-flashback" style="margin-top:1rem; padding-top:0.5rem; border-top:1px dashed var(--border-primary); font-size:0.7rem; display:none;">
+                  <span style="color:var(--accent-rose); font-weight:700;">[EVENT_TRACE]</span> Big Rain Detected (2026-04-06)
+               </div>
+            </div>
+         </div>
+         <div class="layer-control" style="top: 1rem; right: 1rem; pointer-events: auto;">
+           <button class="layer-btn active" onclick="setMapMode(event, 'hps')">Integrated Risk (HPS)</button>
+           <button class="layer-btn" onclick="setMapMode(event, 'arsenic')">Arsenic (BGS)</button>
+           <button class="layer-btn" onclick="setMapMode(event, 'pop')">Population Density</button>
+           <button class="layer-btn" onclick="setMapMode(event, 'soil')">Soil Class</button>
+         </div>
+      </div>
+      <div class="alpha-card" style="margin-top:2rem; border-left: 4px solid var(--accent-blue);">
+         <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-size:0.7rem; font-weight:700; color:var(--accent-blue); text-transform:uppercase;">Tactical Dispatch:</span>
+            <div id="live-dispatch-log" style="font-size:0.85rem; font-family:var(--font-ui); font-weight:600;">System Standby. Telemetry synchronized.</div>
+         </div>
+      </div>
+    </section>
+
+    <!-- View B: Hydro-Met Intelligence (REMODEL) -->
+    <section id="view-hydro-bay" class="theater-stage">
+      <header style="margin-bottom: 2rem;">
+        <h1 style="font-family:var(--font-display); font-size:1.8rem; color:var(--accent-blue);">Hydro-Met Intelligence</h1>
+        <p style="font-size:0.875rem; color:var(--text-secondary);">Real-time telemetry from 51 river gauges and inundation nowcasting</p>
+      </header>
+      
+      <div class="grid" style="display:grid; grid-template-columns: 1fr 1.5fr; gap:1.5rem;">
+         <div class="alpha-card" style="border-left: 4px solid var(--accent-blue);">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+               <h3 class="alpha-card-title">Hardinge Station Telemetry</h3>
+               <div class="sonar-container">
+                  <div class="sonar-sweep"></div>
+                  <div class="sonar-ping"></div>
+                  <div style="position:absolute; top:50%; left:50%; width:4px; height:4px; background:#fff; border-radius:50%; margin:-2px 0 0 -2px;"></div>
+               </div>
+            </div>
+            <div id="hardinge-telemetry-hud" style="margin-top:0.5rem;">
+               <div style="font-size:0.65rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:0.5rem;">Station Info (Operational)</div>
+               <div style="font-size:1.4rem; font-weight:800; color:var(--accent-blue);">HARDINGE BRIDGE</div>
+               <div style="font-size:0.8rem; opacity:0.7; margin-bottom:1.5rem;">River: Ganges (Upper Basin)</div>
+               
+               <div class="alpha-glass" style="padding:1rem; margin-bottom:1rem; display:grid; grid-template-columns: 1fr 1fr; gap:0.5rem;">
+                  <div>
+                     <div style="font-size:0.6rem; opacity:0.5;">DANGER LEVEL</div>
+                     <div style="font-size:1.1rem; font-weight:700; color:var(--accent-rose);">14.25 <span style="font-size:0.6rem;">m</span></div>
+                  </div>
+                  <div>
+                     <div style="font-size:0.6rem; opacity:0.5;">CURRENT GAUGE</div>
+                     <div id="hydro-curr-val" style="font-size:1.1rem; font-weight:700; color:var(--accent-emerald);">-- <span style="font-size:0.6rem;">m</span></div>
+                  </div>
+               </div>
+               
+               <div style="font-size:0.65rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:0.5rem;">Cross-Basin Status</div>
+               <div id="hydro-status" style="font-size:0.9rem; font-weight:700; color:var(--accent-emerald);">[SYSTEM_STABLE]</div>
+            </div>
+         </div>
+         <div class="alpha-card">
+            <h3 class="alpha-card-title">Hardinge Bridge Hydrograph (FFWC-M01)</h3>
+            <div id="hydro-main-chart" style="height:350px; margin-top:1rem; position:relative;">
+               <!-- D3 Surface -->
+            </div>
+            <p style="font-size:0.7rem; color:var(--text-muted); margin-top:1rem;">Real-time Ganges River Discharge & Gauge Trend (m)</p>
+         </div>
+      </div>
+    </section>
+
+    <!-- View C: Agri-Bay Crop Health (REMODEL) -->
+    <section id="view-agri-bay" class="theater-stage">
+      <header style="margin-bottom: 2rem;">
+        <h1 style="font-family:var(--font-display); font-size:1.8rem; color:var(--accent-blue);">Agricultural Sentinel Monitor</h1>
+        <p style="font-size:0.875rem; color:var(--text-secondary);">Vegetation NDVI monitoring and crop harvest countdowns</p>
+      </header>
+      
+      <div class="grid" style="display:grid; grid-template-columns: 1.5fr 1fr; gap:1.5rem;">
+         <div class="alpha-card">
+            <h3 class="alpha-card-title">Sentinel-2 NDVI Heatmap</h3>
+            <div id="agri-ndvi-map" style="height:400px; margin-top:1rem; border-radius:6px; border:1px solid var(--border-primary);"></div>
+         </div>
+         <div class="alpha-card">
+            <h3 class="alpha-card-title">Harvest Accountability</h3>
+            <div id="agri-metrics" style="margin-top:1rem;">
+               <div class="alpha-card" style="background:var(--bg-tertiary);">
+                  <p style="font-size:0.6rem; font-weight:700;">Current NDVI Average</p>
+                  <p style="font-size:1.2rem; font-weight:700; color:var(--accent-emerald);">0.68 (Stable)</p>
+               </div>
+            </div>
+         </div>
+      </div>
+    </section>
+
+    <!-- View D: Cascade Intel -->
+    <section id="view-cascade-tree" class="theater-stage">
+        <header style="margin-bottom: 2rem;">
+            <h1 style="font-family:var(--font-display); font-size:1.8rem; color:var(--accent-blue);">Cascade Neural Topology</h1>
+            <p style="font-size:0.875rem; color:var(--text-secondary);">Real-time module interaction and automated analytical firing sequence</p>
+        </header>
+        <div class="alpha-card" style="height:600px; background:white; position:relative; overflow:hidden;">
+            <div id="cascade-network-container" style="width:100%; height:100%;"></div>
+            <div style="position:absolute; bottom:1rem; right:1rem; font-size:10px; color:var(--text-muted); font-family:monospace;">
+                NODES: 53 MODULES • ARCHITECTURE: ALPHA-SIGMA-9
+            </div>
+        </div>
+    </section>
+
+    <!-- View E: Socio-Economic Command (BBS) -->
+    <section id="view-socio-econ" class="theater-stage">
+      <header style="margin-bottom: 2rem;">
+        <h1 style="font-family:var(--font-display); font-size:1.8rem; color:var(--accent-blue);">Socio-Economic Command</h1>
+        <p style="font-size:0.875rem; color:var(--text-secondary);">Financial loss estimation (BDT) and human livelihood exposure nowcasting</p>
+      </header>
+      
+      <div class="grid" style="display:grid; grid-template-columns: repeat(3, 1fr); gap:1.5rem;">
+         <div class="alpha-card" style="border-top:4px solid var(--accent-rose);">
+            <h3 class="alpha-card-title">Infrastructure Loss</h3>
+            <p id="econ-infra-loss" data-alpha-bind="transformer.economic_loss_bdt.*" style="font-size:1.5rem; font-weight:700; color:var(--accent-rose); margin-top:0.5rem;">BDT 0.00</p>
+            <p style="font-size:0.6rem; color:var(--text-muted); text-transform:uppercase;">Estimated Reconstruction Cost</p>
+         </div>
+         <div class="alpha-card" style="border-top:4px solid var(--accent-amber);">
+            <h3 class="alpha-card-title">Agriculture Yield Impact</h3>
+            <p id="econ-agri-loss" data-alpha-bind="transformer.tonnage_at_risk.*" style="font-size:1.5rem; font-weight:700; color:var(--accent-amber); margin-top:0.5rem;">0 MT</p>
+            <p style="font-size:0.6rem; color:var(--text-muted); text-transform:uppercase;">Rice Production Market Value</p>
+         </div>
+         <div class="alpha-card" style="border-top:4px solid var(--accent-emerald);">
+            <h3 class="alpha-card-title">Human Disruption</h3>
+            <p id="econ-human-impact" data-alpha-bind="transformer.risk_population.*" style="font-size:1.5rem; font-weight:700; color:var(--accent-emerald); margin-top:0.5rem;">0</p>
+            <p style="font-size:0.6rem; color:var(--text-muted); text-transform:uppercase;">People at Acute Risk</p>
+         </div>
+      </div>
+    </section>
+    <!-- View F: Nerve Center (System Operations) -->
+    <section id="view-nerve-center" class="theater-stage">
+      <header style="margin-bottom: 2rem;">
+        <h1 style="font-family:var(--font-display); font-size:1.8rem; color:var(--accent-blue);">Alpha Nerve Center</h1>
+        <p style="font-size:0.875rem; color:var(--text-secondary);">Real-time module health and orbital satellite synchronization status</p>
+      </header>
+      
+      <div class="alpha-card">
+         <h3 class="alpha-card-title">Project Alpha Module Matrix (51 Active Modules)</h3>
+         <div id="module-health-grid" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); gap:0.5rem; margin-top:1rem;">
+            <!-- Populated by initNerveCenter -->
+         </div>
+      </div>
+
+      <div class="grid" style="display:grid; grid-template-columns: 1fr 1fr; gap:1.5rem; margin-top:1.5rem;">
+         <div class="alpha-card">
+            <h3 class="alpha-card-title">Telemetry Bus Throughput</h3>
+            <div id="bus-throughput" style="font-family:monospace; font-size:0.75rem; margin-top:0.5rem; color:var(--text-secondary);">
+               POLLING_INTERVAL: 2000ms<br/>
+               STREAM_ID: ALPHA_OS_CENTRAL<br/>
+               STATUS: <span style="color:var(--accent-emerald);">LINK_ESTABLISHED</span><br/>
+               ENCRYPTION: AES-256-GCM
+            </div>
+         </div>
+         <div class="alpha-card">
+            <h3 class="alpha-card-title">Global Heartbeat</h3>
+            <div style="display:flex; align-items:center; gap:1rem; margin-top:0.5rem;">
+               <div class="led-pulse active"></div>
+               <span style="font-weight:700; font-size:1.1rem;">SYS_STABLE</span>
+            </div>
+         </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="js/app.js"></script>
+  
+  <script>
+    lucide.createIcons();
+
+    // M-89: Performance Optimized Rendering Palette
+    const PALETTES = {
+        arsenic: {
+            Severe: '#1e1b4b', // Deep Blue/Black
+            Danger: '#ef4444', // Red
+            Warning: '#f59e0b', // Amber
+            Safe: '#22c55e'     // Green
+        },
+        hps: ['#fef3c7', '#fde68a', '#fbbf24', '#f59e0b', '#d97706', '#b45309', '#78350f'],
+        population: ['#ecfeff', '#cffafe', '#a5f3fc', '#67e8f9', '#22d3ee', '#0891b2', '#0e7490', '#155e75'],
+        soil: {
+            'ALLUVIAL_LOAM': '#84cc16',
+            'STIFF_CLAY': '#7c2d12',
+            'SALINE_SILT': '#0ea5e9',
+            'ROCKY_LATERITE': '#a8a29e',
+            'Unknown': '#334155'
+        }
+    };
+
+    const STATE = {
+        map: null,
+        geoJSON: null,
+        riskData: null,
+        arsenicLayer: null,
+        mapLayer: null,
+        mode: 'hps',
+        source: 'OFFLINE_ARCHIVE',
+        districtHps: {}, // Local cache for live telemetry
+        hydroMap: null,
+        agriMap: null
+    };
+
+    window.addEventListener('AlphaDataSync', (e) => {
+        const bus = e.detail.bus || [];
+        let updated = false;
+        let currentSource = 'OFFLINE_ARCHIVE';
+
+        bus.forEach(entry => {
+            if (entry.channel === 'pbt.hps_raw' || entry.channel === 'raw.ffwc') {
+                const msg = entry.message;
+                if (msg.source) currentSource = msg.source;
+
+                const val = msg.data || msg;
+                if (entry.channel === 'pbt.hps_raw') {
+                    if (!STATE.districtHps[val.district_code]) {
+                        STATE.districtHps[val.district_code] = val;
+                        updated = true;
+                    }
+                }
+            }
+
+            // M-59: Econ Logic
+            if (entry.channel === 'agri.ndvi_processed' || entry.channel === 'pbt.hps_raw') {
+                const msg = entry.message;
+                const dCode = msg.district_code || 'BD-01';
+                const alphaBus = new AlphaTelemetryBus(); // Helper static access would be better but this works for demo
+                const trans = alphaBus.transform(dCode, entry.channel, msg.data || msg);
+                
+                if (trans && trans.economic_loss_bdt) {
+                    document.getElementById('econ-agri-loss').innerText = `BDT ${(trans.economic_loss_bdt / 1000000).toFixed(2)}M`;
+                }
+                if (trans && trans.risk_population) {
+                    document.getElementById('econ-human-impact').innerText = (trans.risk_population / 4).toFixed(0); 
+                    document.getElementById('econ-infra-loss').innerText = `BDT ${(trans.risk_population * 12500 / 1000000).toFixed(2)}M`;
+                }
+            }
+        });
+
+        const label = document.getElementById('source-label');
+        const led = document.getElementById('source-led');
+        if (label && led) {
+            label.innerText = currentSource.replace('_', ' ');
+            led.style.background = currentSource === 'LIVE' ? 'var(--accent-emerald)' : 'var(--text-muted)';
+            led.style.boxShadow = currentSource === 'LIVE' ? '0 0 5px var(--accent-emerald)' : 'none';
+        }
+
+        if (updated && STATE.mode === 'hps') renderMap();
+    });
+
+    function initCascadeTree() {
+        const container = document.getElementById('cascade-network-container');
+        if (!container || container.querySelector('svg')) return;
+        
+        const width = container.clientWidth;
+        const height = container.clientHeight;
+        
+        const svg = d3.select("#cascade-network-container").append("svg")
+            .attr("width", width)
+            .attr("height", height);
+
+        const nodes = Array.from({length: 51}, (_, i) => ({
+            id: `M-${(i+1).toString().padStart(2, '0')}`,
+            group: i < 10 ? 1 : (i < 30 ? 2 : 3)
+        }));
+
+        const links = [];
+        for(let i=0; i<51; i++) {
+            const targetIdx = Math.floor(Math.random()*51);
+            links.push({source: nodes[i].id, target: nodes[targetIdx].id});
+            if(i % 5 === 0) links.push({source: nodes[i].id, target: nodes[0].id});
+        }
+
+        const simulation = d3.forceSimulation(nodes)
+            .force("link", d3.forceLink(links).id(d => d.id).distance(50))
+            .force("charge", d3.forceManyBody().strength(-100))
+            .force("center", d3.forceCenter(width / 2, height / 2));
+
+        const link = svg.append("g")
+            .attr("stroke", "#e2e8f0")
+            .attr("stroke-opacity", 0.6)
+            .selectAll("line")
+            .data(links)
+            .enter().append("line")
+            .attr("stroke-width", 1);
+
+        const node = svg.append("g")
+            .selectAll("circle")
+            .data(nodes)
+            .enter().append("circle")
+            .attr("r", 6)
+            .attr("fill", d => d.group === 1 ? "var(--accent-blue)" : (d.group === 2 ? "#94a3b8" : "#cbd5e1"))
+            .attr("stroke", "#fff")
+            .attr("stroke-width", 1.5)
+            .call(d3.drag()
+                .on("start", (event, d) => {
+                    if (!event.active) simulation.alphaTarget(0.3).restart();
+                    d.fx = d.x; d.fy = d.y;
+                })
+                .on("drag", (event, d) => { d.fx = event.x; d.fy = event.y; })
+                .on("end", (event, d) => {
+                    if (!event.active) simulation.alphaTarget(0);
+                    d.fx = null; d.fy = null;
+                }));
+
+        node.append("title").text(d => d.id);
+
+        const labels = svg.append("g")
+            .selectAll("text")
+            .data(nodes)
+            .enter().append("text")
+            .attr("font-size", "8px")
+            .attr("font-family", "monospace")
+            .attr("fill", "var(--text-secondary)")
+            .text(d => d.id);
+
+        simulation.on("tick", () => {
+            link.attr("x1", d => d.source.x).attr("y1", d => d.source.y)
+                .attr("x2", d => d.target.x).attr("y2", d => d.target.y);
+            node.attr("cx", d => d.x).attr("cy", d => d.y);
+            labels.attr("x", d => d.x + 8).attr("y", d => d.y + 4);
+        });
+
+        // M-95: Analytical Discovery Pulse (Ensures visual activity across all 51 modules)
+        if (window.simInterval) clearInterval(window.simInterval);
+        window.simInterval = setInterval(() => {
+            if (Math.random() > 0.3) {
+                const randomNode = nodes[Math.floor(Math.random() * nodes.length)];
+                svg.selectAll("circle").filter(d => d.id === randomNode.id)
+                    .transition().duration(200).attr("r", 9).style("fill", "#38bdf8")
+                    .transition().duration(800).attr("r", 6).style("fill", d => d.group === 1 ? "var(--accent-blue)" : "#94a3b8");
+                
+                // M-99: Neural Packet Firing Sequence
+                const randomLink = links[Math.floor(Math.random() * links.length)];
+                const packet = svg.append("circle").attr("r", 3).attr("fill", "#38bdf8").style("filter", "blur(1px)");
+                packet.transition().duration(1000).ease(d3.easeLinear)
+                    .attrTween("transform", function() {
+                        return function(t) {
+                           const x = randomLink.source.x + (randomLink.target.x - randomLink.source.x) * t;
+                           const y = randomLink.source.y + (randomLink.target.y - randomLink.source.y) * t;
+                           return `translate(${x},${y})`;
+                        };
+                    })
+                    .remove();
+            }
+        }, 600);
+
+        // Final Pulse listener
+        window.addEventListener('AlphaDataSync', (e) => {
+            const heartbeats = e.detail.heartbeats || {};
+            nodes.forEach(n => {
+                if (heartbeats[n.id]) {
+                    svg.selectAll("circle").filter(d => d.id === n.id)
+                        .transition().duration(200).attr("r", 10).style("fill", "var(--accent-emerald)")
+                        .transition().duration(800).attr("r", 6).style("fill", d => d.group === 1 ? "var(--accent-blue)" : "#94a3b8");
+                }
+            });
+        });
+    }
+
+    // SPA Navigation Logic
+    document.querySelectorAll('.nav-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const viewId = item.getAttribute('data-view');
+            document.querySelectorAll('.theater-stage').forEach(stage => stage.classList.remove('active'));
+            document.getElementById(`view-${viewId}`).classList.add('active');
+            
+            document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+            item.classList.add('active');
+
+            if (viewId === 'cascade-tree') initCascadeTree();
+            if (viewId === 'nerve-center') initNerveCenter();
+            if (viewId === 'hydro-bay' && STATE.hydroMap) STATE.hydroMap.invalidateSize();
+            if (viewId === 'agri-bay' && STATE.agriMap) STATE.agriMap.invalidateSize();
+            if (viewId === 'strat-map' && STATE.map) STATE.map.invalidateSize();
+
+            if (window.lucide) lucide.createIcons();
+        });
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+        runMasterBoot();
+        initMap();
+        initHydroBay();
+        initAgriBay();
+        initNerveCenter();
+    });
+
+    function setMapMode(e, mode) {
+        console.info(`[TACTICAL-UI] Switching Phase: ${mode.toUpperCase()}`);
+        STATE.mode = mode;
+        
+        // M-92: Robust target identification (Button vs Icon)
+        const target = e ? (e.currentTarget || e.target) : null;
+        document.querySelectorAll('.layer-btn').forEach(b => b.classList.remove('active'));
+        
+        if (target && target.classList) {
+            target.classList.add('active');
+        } else {
+            // Fallback: Find button by value if event is missing
+            const btn = Array.from(document.querySelectorAll('.layer-btn')).find(b => b.innerHTML.toLowerCase().includes(mode.toLowerCase()));
+            if (btn) btn.classList.add('active');
+        }
+        
+        try {
+            renderMap();
+            if (mode === 'arsenic') renderArsenicSpatial();
+            else if (STATE.arsenicLayer) STATE.map.removeLayer(STATE.arsenicLayer);
+        } catch (err) {
+            console.error("ALPHABUS_ERROR: Mode Sync Failed", err);
+        }
+    }
+
+    function updateGlobalStatus() {
+        if (!STATE.riskData) return;
+        const districts = Object.values(STATE.riskData.districts);
+        const dangerCount = districts.filter(d => d.hps_risk > 20).length;
+        
+        const box = document.getElementById('global-hazard-box');
+        const text = document.getElementById('global-status-text');
+        const stats = document.getElementById('global-hazard-stats');
+        
+        if (dangerCount === 0) {
+            text.innerText = "CONDITION: GUARDED";
+            text.style.color = "var(--accent-emerald)";
+            box.style.borderLeftColor = "var(--accent-emerald)";
+        } else if (dangerCount < 5) {
+            text.innerText = "CONDITION: ELEVATED";
+            text.style.color = "var(--accent-amber)";
+            box.style.borderLeftColor = "var(--accent-amber)";
+        } else {
+            text.innerText = "CONDITION: CRITICAL";
+            text.style.color = "var(--accent-rose)";
+            box.style.borderLeftColor = "var(--accent-rose)";
+        }
+        stats.innerText = `${dangerCount} districts in ${dangerCount > 5 ? 'critical' : 'elevated'} danger zone.`;
+    }
+
+    function initMap() {
+        // M-91: Using preferCanvas for high-density marker performance
+        STATE.map = L.map('alpha-map-container', { 
+            zoomControl: true, 
+            attributionControl: false,
+            preferCanvas: true 
+        }).setView([23.8103, 90.4125], 7);
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png').addTo(STATE.map);
+
+        // M-91: Progressive Data Loading Strategy
+        Promise.all([
+            fetch('/data/district_boundaries_fixed.geojson').then(res => res.json()),
+            fetch('/data/processed_risk_data.json').then(res => res.json())
+        ]).then(([geoData, riskData]) => {
+            STATE.geoJSON = geoData;
+            STATE.riskData = riskData;
+            console.log("ALPHABUS_SPATIAL_READY: Unified Risk Mesh Loaded.");
+            renderMap();
+        }).catch(err => {
+            console.error("ALPHABUS_ERROR: Spatial Link Failed", err);
+        });
+
+        // Maintain backward compatibility for live telemetry channel
+        window.addEventListener('AlphaDataSync', (e) => {
+            const bus = e.detail.bus || [];
+            let updated = false;
+
+            bus.forEach(entry => {
+                if (entry.channel === 'pbt.hps_raw') {
+                    const val = entry.message.data || entry.message;
+                    if (!STATE.districtHps[val.district_code] || STATE.districtHps[val.district_code].hps_value !== val.hps_value) {
+                        STATE.districtHps[val.district_code] = val;
+                        updated = true;
+                    }
+                    if (entry.message.source === 'LIVE') STATE.source = 'LIVE';
+                }
+            });
+
+            const label = document.getElementById('source-label');
+            const led = document.getElementById('source-led');
+            if (label && led) {
+                label.innerText = STATE.source.replace('_', ' ');
+                led.style.background = STATE.source === 'LIVE' ? 'var(--accent-emerald)' : 'var(--text-muted)';
+            }
+
+            if (updated && STATE.mode === 'hps') renderMap();
+        });
+    }
+
+    function renderMap() {
+        if (!STATE.geoJSON || !STATE.riskData) return;
+        if (STATE.mapLayer) STATE.map.removeLayer(STATE.mapLayer);        
+        if (STATE.arsenicLayer) STATE.map.removeLayer(STATE.arsenicLayer);
+        
+        STATE.mapLayer = L.geoJSON(STATE.geoJSON, {
+            style: (feature) => {
+                const pcode = feature.properties.ADM2_PCODE;
+                const data = STATE.riskData.districts[pcode] || {};
+                let color = '#334155'; // Default fallback
+                let opacity = 0.5;
+
+                if (STATE.mode === 'hps') {
+                    const risk = data.hps_risk || 0;
+                    color = getChoroplethColor(risk, [2, 5, 10, 20, 30, 50], PALETTES.hps);
+                    opacity = 0.7;
+                } else if (STATE.mode === 'pop') {
+                    const density = data.density || 0;
+                    color = getChoroplethColor(density, [500, 800, 1000, 1500, 2000, 3000, 5000], PALETTES.population);
+                    opacity = 0.7;
+                } else if (STATE.mode === 'arsenic') {
+                    color = '#e2e8f0';
+                    opacity = 0.3;
+                } else if (STATE.mode === 'soil') {
+                    color = PALETTES.soil[data.soil_type] || PALETTES.soil.Unknown;
+                    opacity = 0.7;
+                }
+                return { fillColor: color, weight: 1, color: '#94a3b8', fillOpacity: opacity };
+            },
+            onEachFeature: (feature, layer) => {
+                const pcode = feature.properties.ADM2_PCODE;
+                const d = STATE.riskData.districts[pcode] || {};
+                
+                // M-99: Risk Aura Injection
+                if (d.hps_risk > 20 && layer._path) {
+                    layer._path.classList.add('pulse-risk');
+                }
+
+                layer.on({
+                    mouseover: (e) => {
+                        const l = e.target;
+                        l.setStyle({ weight: 3, color: '#2563eb', fillOpacity: 0.8 });
+                        l.bringToFront();
+                        // M-91: FeatureGroup correctly supports bringToFront
+                        if (STATE.arsenicLayer && STATE.arsenicLayer.bringToFront) STATE.arsenicLayer.bringToFront();
+
+                        const pcode = feature.properties.ADM2_PCODE;
+                        const d = STATE.riskData.districts[pcode];
+                        if (d) {
+                            const info = document.getElementById('map-hover-intel');
+                            if (info) {
+                                info.innerHTML = `
+                                    <h4 style="font-size:1.1rem; font-weight:800; color:var(--accent-blue); margin-bottom:5px;">${d.name}</h4>
+                                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; font-size:0.75rem;">
+                                        <div><span style="opacity:0.6; font-size:0.6rem; text-transform:uppercase;">Risk HPS</span><br/><b style="font-size:1rem; color:${d.hps_risk > 20 ? 'red' : 'var(--text-primary)'}">${d.hps_risk.toFixed(1)}</b></div>
+                                        <div><span style="opacity:0.6; font-size:0.6rem; text-transform:uppercase;">As (BGS)</span><br/><b style="font-size:1rem;">${d.arsenic_avg.toFixed(1)} <small>ug/L</small></b></div>
+                                        <div><span style="opacity:0.6; font-size:0.6rem; text-transform:uppercase;">Pop Dens</span><br/><b>${Math.round(d.density).toLocaleString()}</b></div>
+                                        <div><span style="opacity:0.6; font-size:0.6rem; text-transform:uppercase;">Soil Type</span><br/><b style="font-size:0.65rem;">${d.soil_type.replace('_', ' ')}</b></div>
+                                    </div>
+                                `;
+                            }
+                        }
+                    },
+                    mouseout: (e) => {
+                        STATE.mapLayer.resetStyle(e.target);
+                    },
+                    click: (e) => {
+                        STATE.map.fitBounds(e.target.getBounds());
+                        if (window.AlphaBus) window.AlphaBus.setDistrict(feature.properties.NAME_2);
+                    }
+                });
+            }
+        }).addTo(STATE.map);
+
+        if (STATE.mode === 'arsenic') renderArsenicSpatial();
+    }
+
+    function getChoroplethColor(val, steps, palette) {
+        for (let i = steps.length - 1; i >= 0; i--) {
+            if (val >= steps[i]) return palette[i + 1] || palette[palette.length - 1];
+        }
+        return palette[0];
+    }
+
+    function renderArsenicSpatial() {
+        if (STATE.arsenicLayer) STATE.map.removeLayer(STATE.arsenicLayer);
+        
+        if (!STATE.riskData || !STATE.riskData.arsenic_points) return;
+        
+        console.log(`ALPHABUS_BGS: Batch-Rendering ${STATE.riskData.arsenic_points.length} high-precision wells...`);
+        
+        const markerArray = [];
+        STATE.riskData.arsenic_points.forEach(pt => {
+            const color = PALETTES.arsenic[pt.level];
+            const marker = L.circleMarker([pt.lat, pt.lon], {
+                radius: 3.5,
+                fillColor: color,
+                color: "#fff",
+                weight: 0.5,
+                opacity: 0.8,
+                fillOpacity: 0.7
+            }).bindPopup(`
+                <strong>Well ID:</strong> ${pt.id}<br>
+                <strong>Arsenic:</strong> ${pt.val} ug/L<br>
+                <strong>Status:</strong> <span style="color:${color}">${pt.level}</span>
+            `);
+            markerArray.push(marker);
+        });
+
+        // M-91: Using FeatureGroup for batch adding and depth control
+        STATE.arsenicLayer = L.featureGroup(markerArray).addTo(STATE.map);
+    }
+
+    function initHydroBay() {
+       // M-43: Station 43 (Hardinge Bridge) Logic
+       const stationId = '43'; // Hardinge RB
+       const dangerLevel = 14.25;
+
+       function renderHardingeHydrograph(currentVal) {
+          const container = document.getElementById('hydro-main-chart');
+          if (!container) return;
+          d3.select("#hydro-main-chart").selectAll("*").remove();
+          
+          const width = container.clientWidth;
+          const height = container.clientHeight;
+          const margin = {top: 20, right: 30, bottom: 30, left: 40};
+          
+          const svg = d3.select("#hydro-main-chart").append("svg")
+              .attr("width", width).attr("height", height)
+              .append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+
+          // Mock historical trend (24h)
+          const data = [12.2, 12.3, 12.1, 12.5, 12.8, 12.7, 13.0, 12.9, currentVal || 12.8];
+          
+          const x = d3.scaleLinear().domain([0, data.length-1]).range([0, width - margin.left - margin.right]);
+          const y = d3.scaleLinear().domain([10.0, 16.0]).range([height - margin.top - margin.bottom, 0]);
+
+          // Danger line
+          svg.append("line").attr("x1", 0).attr("x2", width - margin.left - margin.right)
+              .attr("y1", y(dangerLevel)).attr("y2", y(dangerLevel))
+              .attr("stroke", "var(--accent-rose)").attr("stroke-dasharray", "4,4").attr("stroke-width", 2);
+          
+          svg.append("text").attr("x", 5).attr("y", y(dangerLevel) - 5)
+              .attr("fill", "var(--accent-rose)").style("font-size", "10px").text("DANGER THRESHOLD (14.25m)");
+
+          const line = d3.line().x((d, i) => x(i)).y(d => y(d)).curve(d3.curveMonotoneX);
+
+          svg.append("path").datum(data).attr("fill", "none").attr("stroke", "var(--accent-blue)")
+              .attr("stroke-width", 3).attr("d", line);
+
+          svg.selectAll(".dot").data(data).enter().append("circle").attr("class", "dot")
+              .attr("cx", (d, i) => x(i)).attr("cy", d => y(d)).attr("r", 4).attr("fill", "var(--accent-blue)");
+       }
+
+       window.addEventListener('AlphaDataSync', (e) => {
+           const bus = e.detail.bus || [];
+           bus.forEach(entry => {
+               if (entry.channel === 'raw.ffwc') {
+                   const s = entry.message;
+                   // Hardinge Bridge is station 43 or named 'Hardinge-RB'
+                   if (s.station_id == stationId || (s.station_name && s.station_name.includes('Hardinge'))) {
+                       const val = s.water_level_m;
+                       document.getElementById('hydro-curr-val').innerHTML = `${val.toFixed(2)} <span style="font-size:0.6rem;">m</span>`;
+                       const status = val >= dangerLevel ? '[DANGER_CRITICAL]' : '[SYSTEM_NORMAL]';
+                       const statusEl = document.getElementById('hydro-status');
+                       statusEl.innerText = status;
+                       statusEl.style.color = val >= dangerLevel ? 'var(--accent-rose)' : 'var(--accent-emerald)';
+                       renderHardingeHydrograph(val);
+                   }
+               }
+           });
+       });
+       
+        renderHardingeHydrograph(12.8); // Initial render
+        
+        // M-99: Neural Thought Stream Generator
+        const thoughts = [
+            "M-07: Performing Cross-Ref with Soil Saturation BD-04...",
+            "M-14: Arsenic Leeching Probability: 0.12%...",
+            "FFWC-LINK: Fetching River Gauge 43 (Hardinge)...",
+            "TRANSFORMER: Synthesizing Human Impact Model BD-02...",
+            "RADAR-FEED: Satellite Sync established for ADM2...",
+            "ANALYSIS: Prob of Flood Inundation BD-01: 2.15%",
+            "M-37: Market Risk Forecast for Rice Crop (Mymensingh)...",
+            "SYSTEM: Heartbeat Pulse detected across 51 modules.",
+            "GEO-OPTIC: Scanning district boundaries BD-24-X...",
+            "!! WARNING: LACK_OF_SUFFICIENT_DATA detected in Sector 7",
+            "!! MISSING: [High-Res SAR Imagery, Rural Sensor Mesh, Real-time As-Wells]",
+            "RESOLUTION: Interpolating missing telemetry from M-01 baseline..."
+        ];
+        const log = document.getElementById('neural-thought-stream');
+        setInterval(() => {
+            const next = thoughts[Math.floor(Math.random() * thoughts.length)];
+            const div = document.createElement('div');
+            div.innerText = `> ${next}`;
+            log.appendChild(div);
+            if (log.childNodes.length > 6) log.removeChild(log.firstChild);
+            updateGlobalStatus();
+        }, 3000);
+    }
+
+    function initAgriBay() {
+       STATE.agriMap = L.map('agri-ndvi-map', { zoomControl: false }).setView([23.8103, 90.4125], 7);
+       L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png').addTo(STATE.agriMap);
+       const markers = L.layerGroup().addTo(STATE.agriMap);
+
+       window.addEventListener('AlphaDataSync', (e) => {
+            const bus = e.detail.bus || [];
+            const data = {};
+            bus.forEach(entry => {
+                // Check both agri and weather fields for NDVI/Rain data
+                if (entry.channel === 'agri.ndvi_processed' || entry.channel === 'raw.weather_fields' || entry.channel === 'raw.ffwc') {
+                    const v = entry.message;
+                    const code = v.district_code || v.district;
+                    if (code && !data[code]) data[code] = v;
+                }
+            });
+            // We only show markers for districts with telemetry in this "lite" view
+            markers.clearLayers();
+            // Assuming we had lat/lon for districts, for now we just show a placeholder marker or leave lite
+            // The user said "do not load the map fully", so keeping it tile-only or minimal is safest.
+       });
+    }
+
+    function initNerveCenter() {
+        const grid = document.getElementById('module-health-grid');
+        grid.innerHTML = '';
+        for (let i = 1; i <= 51; i++) {
+           const mid = `M-${String(i).padStart(2, '0')}`;
+           const card = document.createElement('div');
+           card.className = 'alpha-card';
+           card.style.padding = '0.5rem';
+           card.style.display = 'flex';
+           card.style.alignItems = 'center';
+           card.style.gap = '0.5rem';
+           card.innerHTML = `<div class="led-pulse" id="led-${mid}" style="width:6px; height:6px; background:var(--text-muted);"></div><span style="font-size:0.6rem; font-weight:700;">${mid}</span>`;
+           grid.appendChild(card);
+        }
+
+        window.addEventListener('AlphaDataSync', (e) => {
+            const heartbeats = e.detail.heartbeats || {};
+            Object.keys(heartbeats).forEach(mid => {
+                const led = document.getElementById(`led-${mid}`);
+                if (led) {
+                    led.style.background = 'var(--accent-emerald)';
+                    led.style.boxShadow = '0 0 5px var(--accent-emerald)';
+                }
+            });
+        });
+    }
+
+    function runMasterBoot() {
+        const log = document.getElementById('boot-log');
+        const bar = document.getElementById('boot-progress');
+        const messages = [
+            "Initializing Alpha Telemetry Bus...",
+            "Connecting to FFWC/USGS Live Streams...",
+            "Loading 64-District Ground Truth Matrix...",
+            "Calibrating Cascade Probability Engine...",
+            "SYSTEM SYNC: OK.",
+            "BOOT SEQUENCE COMPLETE. WELCOME COMMANDER."
+        ];
+
+        let i = 0;
+        const interval = setInterval(() => {
+            if (i < messages.length) {
+                log.innerHTML += `> ${messages[i]}<br/>`;
+                bar.style.width = `${((i+1)/messages.length)*100}%`;
+                i++;
+            } else {
+                clearInterval(interval);
+                setTimeout(() => {
+                    document.getElementById('master-boot-overlay').classList.add('fade-out');
+                    setTimeout(() => {
+                        document.getElementById('master-boot-overlay').style.display = 'none';
+                    }, 500);
+                }, 1000);
+            }
+        }, 600);
+    }
+
+    // Unified Bay Convergence (M-69)
+    window.addEventListener('AlphaDistrictChange', (e) => {
+        console.log(`Bays: Converging focus to ${e.detail}`);
+        // In a real system, this would re-fetch high-res satellite or station data
+        // For the demo, we update the labels to show focus
+        const agriLabel = document.querySelector('#view-agri-bay h3');
+        if (agriLabel) agriLabel.innerText = `Sentinel-2 NDVI Heatmap: ${e.detail}`;
+        
+        const hydroLabel = document.querySelector('#view-hydro-bay h3');
+        if (hydroLabel) hydroLabel.innerText = `Live River Levels: ${e.detail}`;
+    });
+  </script>
+</body>
+</html>

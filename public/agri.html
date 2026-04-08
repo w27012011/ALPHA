@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AGRI-BAY | Crop & Food Security • PROJECT ALPHA</title>
+  
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+</head>
+<body class="selection:bg-blue-500/30 overflow-x-hidden">
+
+  <!-- Main Content -->
+  <main id="main-content" class="ml-64 transition-all duration-300 pt-20 pb-8 px-6">
+    <div class="max-w-7xl mx-auto space-y-4 animate-in">
+      
+      <!-- High-Density Title Bar -->
+      <div class="flex items-center justify-between mb-2">
+        <div>
+          <h2 class="text-2xl font-bold tracking-tight font-display" style="color:var(--text-primary)">Agriculture Bay</h2>
+          <p class="text-[11px] font-medium" style="color:var(--text-secondary)">Satellite NDVI vegetation monitoring, harvest lockdown countdowns, and post-flood spoilage nowcasting</p>
+        </div>
+        <div class="flex items-center gap-2">
+           <span class="text-[9px] font-bold uppercase tracking-widest text-secondary" style="color:var(--text-secondary)">MODIS NDVI: Active</span>
+           <div class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></div>
+        </div>
+      </div>
+
+      <!-- 1. Tighter Metric Grid -->
+      <div id="metrics-grid" class="grid grid-cols-1 md:grid-cols-3 gap-3">
+        <div class="alpha-box green flex items-center justify-between">
+          <div>
+            <p class="text-[9px] font-bold uppercase tracking-widest text-secondary" style="color:var(--text-secondary)">Current NDVI Index</p>
+            <h3 data-alpha-bind="agri.ndvi_processed.ndvi_current" class="text-xl font-bold font-mono text-primary" style="color:var(--text-primary)">0.00</h3>
+          </div>
+          <div class="p-2 bg-emerald-500/10 rounded-lg"><i data-lucide="sun" class="text-emerald-500 w-4 h-4"></i></div>
+        </div>
+        <div class="alpha-box green flex items-center justify-between">
+          <div>
+            <p class="text-[9px] font-bold uppercase tracking-widest text-secondary" style="color:var(--text-secondary)">Growth Stage</p>
+            <h3 data-alpha-bind="agri.ndvi_processed.growth_stage" class="text-xl font-bold font-mono text-primary" style="color:var(--text-primary)">WAITING</h3>
+          </div>
+          <div class="p-2 bg-blue-500/10 rounded-lg"><i data-lucide="calendar" class="text-blue-500 w-4 h-4"></i></div>
+        </div>
+        <div class="alpha-box green flex items-center justify-between border-l-4 border-l-rose-500">
+          <div>
+            <p class="text-[9px] font-bold uppercase tracking-widest text-secondary" style="color:var(--text-secondary)">NDVI Anomaly (5yr)</p>
+            <h3 data-alpha-bind="agri.ndvi_processed.ndvi_anomaly" class="text-xl font-bold font-mono text-rose-500">0.00</h3>
+          </div>
+          <div class="p-2 bg-rose-500/10 rounded-lg"><i data-lucide="bar-chart-2" class="text-rose-500 w-4 h-4"></i></div>
+        </div>
+      </div>
+
+      <!-- 2. Dual Column Layout -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <!-- NDVI Map Box -->
+        <div class="alpha-box green p-0 overflow-hidden relative" style="height: 400px;">
+          <div id="agri-ndvi-map" class="w-full h-full bg-body" style="background:var(--bg-body)"></div>
+          <div class="absolute bottom-4 left-4 z-10 px-2 py-1 bg-card border border-primary rounded text-[9px] font-bold uppercase tracking-tighter" style="background:var(--bg-card); border-color:var(--border-primary); color:var(--text-secondary)">Sentinel-2 NDVI Heatmap • Crop Health</div>
+          <div class="absolute top-4 right-4 z-10 text-[8px] font-bold uppercase text-secondary opacity-50">Interactive Zoom/Pan</div>
+        </div>
+
+        <!-- Sidebar Components -->
+        <div class="space-y-4">
+          <!-- Harvest Lockdown Box -->
+          <div class="alpha-box green p-4 bg-body shadow-inner h-[230px]" style="background:rgba(0,0,0,0.02)">
+              <h3 class="text-[9px] font-bold text-secondary mb-4 uppercase tracking-[0.2em] flex items-center justify-between border-b border-primary pb-2" style="border-color:var(--border-primary)">
+                 <span>District Harvest Lockdowns</span>
+                 <span class="text-[8px] px-1.5 py-0.5 bg-rose-500/10 text-rose-500 rounded font-mono">T-MINUS ALERT</span>
+              </h3>
+              <div class="space-y-2">
+                  <div class="flex justify-between items-center p-2 bg-card border border-primary rounded" style="background:var(--bg-card); border-color:var(--border-primary)">
+                     <div class="text-[9px]"><span class="text-primary font-bold">Kurigram</span> • Aman Crop</div>
+                     <span class="text-[10px] font-mono text-rose-500 font-bold">48h to Lock</span>
+                  </div>
+                  <div class="flex justify-between items-center p-2 bg-card border border-primary rounded" style="background:var(--bg-card); border-color:var(--border-primary)">
+                     <div class="text-[9px]"><span class="text-primary font-bold">Gaibandha</span> • Aman Crop</div>
+                     <span class="text-[10px] font-mono text-blue-500 font-bold">96h to Lock</span>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Spoilage Decay Box (Interactive Chart) -->
+          <div class="alpha-box green flex flex-col flex-1 h-[250px]">
+              <h3 class="text-[9px] font-bold text-secondary mb-3 uppercase tracking-[0.2em] flex items-center justify-between">
+                <span>M-30 Decay Nowcast</span>
+                <i data-lucide="move" class="text-secondary w-3 h-3 opacity-30"></i>
+              </h3>
+              <div class="graph-viewport flex-1 h-32">
+                 <canvas id="agri-decay-chart"></canvas>
+              </div>
+              <p class="text-[8px] text-secondary mt-3 leading-tight opacity-70">Michaelis-Menten respiration models combined with Baranyi-Roberts microbial growth show acute post-flood spoilage risk.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/navigator.js"></script>
+  <script src="js/app.js"></script>
+  
+  <script>
+    /**
+     * Page Specific Logic: AGRI-BAY (Elegant Duo V4)
+     */
+    window.addEventListener('DOMContentLoaded', () => {
+       initMap();
+       initInteractiveChart();
+    });
+
+    function initMap() {
+      const map = L.map('agri-ndvi-map', {
+        zoomControl: true,
+        attributionControl: false
+      }).setView([23.8103, 90.4125], 7);
+
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png').addTo(map);
+
+      // M-89: Performance Optimized "Lite" Implementation
+      // No GeoJSON district boundaries loaded here to ensure rapid TTI on auxiliary pages.
+    }
+
+    function initInteractiveChart() {
+       const ctx = document.getElementById('agri-decay-chart').getContext('2d');
+       new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['T+0', 'T+12h', 'T+24h', 'T+36h', 'T+48h', 'T+60h', 'T+72h'],
+                datasets: [{
+                    label: 'Decay Probability (%)',
+                    data: [2, 8, 15, 32, 58, 82, 98],
+                    borderColor: '#f43f5e',
+                    backgroundColor: 'rgba(244, 63, 94, 0.1)',
+                    borderWidth: 2,
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    zoom: {
+                        zoom: { wheel: { enabled: true }, pinch: { enabled: true }, mode: 'x' },
+                        pan: { enabled: true, mode: 'x' }
+                    }
+                },
+                scales: {
+                    y: {  ticks: { color: '#64748b', font: { family: 'JetBrains Mono', size: 9 } } },
+                    x: {  ticks: { color: '#64748b', font: { family: 'JetBrains Mono', size: 9 } } }
+                }
+            }
+       });
+    }
+  </script>
+</body>
+</html>

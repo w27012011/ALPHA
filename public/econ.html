@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ECON-BAY | Economic Warning & Resilience • PROJECT ALPHA</title>
+  
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+</head>
+<body class="selection:bg-blue-500/30 overflow-x-hidden">
+
+  <!-- Main Content -->
+  <main id="main-content" class="ml-64 transition-all duration-300 pt-20 pb-8 px-6">
+    <div class="max-w-7xl mx-auto space-y-4 animate-in">
+      
+      <!-- High-Density Title Bar -->
+      <div class="flex items-center justify-between mb-2">
+        <div>
+          <h2 class="text-2xl font-bold tracking-tight font-display" style="color:var(--text-primary)">Economic Warning Bay</h2>
+          <p class="text-[11px] font-medium" style="color:var(--text-secondary)">Strategic reserve coverage monitoring, Price Pressure Signal (PPS) forecasting, and global chokepoint stress analysis</p>
+        </div>
+        <div class="flex items-center gap-2">
+           <span class="text-[9px] font-bold uppercase tracking-widest text-secondary" style="color:var(--text-secondary)">PPS Engine: Diverging</span>
+           <div class="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse"></div>
+        </div>
+      </div>
+
+      <!-- 1. Tighter Metric Grid -->
+      <div id="metrics-grid" class="grid grid-cols-1 md:grid-cols-3 gap-3">
+        <div class="alpha-box amber flex items-center justify-between">
+          <div>
+            <p class="text-[9px] font-bold uppercase tracking-widest text-secondary" style="color:var(--text-secondary)">Forex Pressure Score</p>
+            <h3 data-alpha-bind="econ.domestic_output.forex_pressure_score" class="text-xl font-bold font-mono text-primary" style="color:var(--text-primary)">0.00</h3>
+          </div>
+          <div class="p-2 bg-emerald-500/10 rounded-lg"><i data-lucide="dollar-sign" class="text-emerald-500 w-4 h-4"></i></div>
+        </div>
+        <div class="alpha-box amber flex items-center justify-between border-l-4 border-l-rose-500">
+          <div>
+            <p class="text-[9px] font-bold uppercase tracking-widest text-secondary" style="color:var(--text-secondary)">Inflation Accel. %</p>
+            <h3 data-alpha-bind="econ.domestic_output.inflation_acceleration_pct" class="text-xl font-bold font-mono text-rose-500">0.00 %</h3>
+          </div>
+          <div class="p-2 bg-rose-500/10 rounded-lg"><i data-lucide="activity" class="text-rose-500 w-4 h-4"></i></div>
+        </div>
+        <div class="alpha-box amber flex items-center justify-between">
+          <div>
+            <p class="text-[9px] font-bold uppercase tracking-widest text-secondary" style="color:var(--text-secondary)">Fuel Disruption %</p>
+            <h3 data-alpha-bind="econ.domestic_output.fuel_distribution_disruption_pct" class="text-xl font-bold font-mono text-primary" style="color:var(--text-primary)">0.00 %</h3>
+          </div>
+          <div class="p-2 bg-blue-500/10 rounded-lg"><i data-lucide="bar-chart-2" class="text-blue-500 w-4 h-4"></i></div>
+        </div>
+      </div>
+
+      <!-- 2. Main Visual Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        
+        <!-- National Reserve Vials Box -->
+        <div class="alpha-box amber p-6 flex flex-col justify-between min-h-[480px]">
+           <h3 class="text-[10px] font-bold text-secondary mb-12 uppercase tracking-[0.2em] border-b border-primary pb-2" style="border-color:var(--border-primary)">
+             <span>Strategic Reserve Vials</span>
+           </h3>
+           <div class="flex justify-around items-end h-56 gap-6">
+              <!-- Petroleum -->
+              <div class="flex flex-col items-center gap-3">
+                 <div class="relative w-12 h-40 bg-body border border-primary rounded-xl overflow-hidden shadow-inner" style="background:rgba(0,0,0,0.05); border-color:var(--border-primary)">
+                    <div class="absolute bottom-0 w-full bg-blue-500/60" style="height: 75%;"></div>
+                 </div>
+                 <div class="text-center">
+                    <p class="text-[8px] font-bold text-secondary uppercase">Petro</p>
+                    <p class="text-[11px] font-bold text-primary font-mono">45 DAYS</p>
+                 </div>
+              </div>
+              <!-- Rice -->
+              <div class="flex flex-col items-center gap-3">
+                 <div class="relative w-12 h-40 bg-body border border-primary rounded-xl overflow-hidden shadow-inner" style="background:rgba(0,0,0,0.05); border-color:var(--border-primary)">
+                    <div class="absolute bottom-0 w-full bg-emerald-500/60" style="height: 30%;"></div>
+                 </div>
+                 <div class="text-center">
+                    <p class="text-[8px] font-bold text-secondary uppercase">Grain</p>
+                    <p class="text-[11px] font-bold text-rose-500 font-mono">12 DAYS</p>
+                 </div>
+              </div>
+              <!-- Medicine -->
+              <div class="flex flex-col items-center gap-3">
+                 <div class="relative w-12 h-40 bg-body border border-primary rounded-xl overflow-hidden shadow-inner" style="background:rgba(0,0,0,0.05); border-color:var(--border-primary)">
+                    <div class="absolute bottom-0 w-full bg-amber-500/60" style="height: 90%;"></div>
+                 </div>
+                 <div class="text-center">
+                    <p class="text-[8px] font-bold text-secondary uppercase">Meds</p>
+                    <p class="text-[11px] font-bold text-primary font-mono">180 DAYS</p>
+                 </div>
+              </div>
+           </div>
+           <p class="text-[8px] text-secondary mt-8 text-center leading-tight opacity-70">Reserve levels calculated via M-38 aggregate buffer monitoring vs daily consumption elasticity from M-37.</p>
+        </div>
+
+        <!-- PPS Ticker & Global Stress -->
+        <div class="lg:col-span-2 space-y-4">
+           <!-- PPS Ticker Box -->
+           <div class="alpha-box amber p-4">
+              <h3 class="text-[10px] font-bold text-secondary mb-4 uppercase tracking-[0.2em] flex items-center justify-between border-b border-primary pb-2" style="border-color:var(--border-primary)">
+                 <span>Price Pressure Signals (7D)</span>
+                 <span class="text-[8px] px-1.5 py-0.5 bg-blue-500/10 text-blue-500 rounded font-mono">M-39 ACTIVE</span>
+              </h3>
+                     <span class="text-[9px] font-mono text-rose-500">+42.1%</span>
+                  </div>
+              </div>
+           </div>
+
+           <!-- Chokepoint Map Box -->
+           <div class="alpha-box amber p-0 overflow-hidden relative h-[250px] shadow-inner bg-body" style="background:rgba(0,0,0,0.02)">
+              <div class="p-3 border-b border-primary flex items-center gap-2" style="border-color:var(--border-primary)">
+                 <i data-lucide="globe" class="text-blue-400 w-3 h-3"></i>
+                 <span class="text-[10px] font-bold text-secondary uppercase tracking-[0.2em]">Global Chokepoint Stress (M-41)</span>
+              </div>
+              <div class="flex items-center justify-center h-full opacity-30">
+                  <i data-lucide="map" class="w-24 h-24 text-secondary"></i>
+              </div>
+              <div class="absolute bottom-4 left-6 right-6 grid grid-cols-2 gap-8">
+                 <div>
+                    <div class="flex justify-between items-center mb-1"><span class="text-[9px] font-bold text-secondary uppercase">Ctg Flow</span><span class="text-[9px] font-mono text-primary font-bold">42%</span></div>
+                    <div class="w-full h-1 bg-slate-300/20 rounded-full overflow-hidden"><div class="h-full bg-amber-500" style="width: 42%;"></div></div>
+                 </div>
+                 <div>
+                    <div class="flex justify-between items-center mb-1"><span class="text-[9px] font-bold text-secondary uppercase">Suez Buffer</span><span class="text-[9px] font-mono text-primary font-bold">88%</span></div>
+                    <div class="w-full h-1 bg-slate-300/20 rounded-full overflow-hidden"><div class="h-full bg-rose-500" style="width: 88%;"></div></div>
+                 </div>
+              </div>
+           </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="js/navigator.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    window.addEventListener('AlphaDataSync', (e) => {
+        const channels = e.detail.channels || {};
+        const econ = channels['econ.domestic_output'];
+        
+        if (econ) {
+            // Update PPS Ticker
+            const ppsGrid = document.getElementById('pps-grid');
+            if (ppsGrid) {
+                ppsGrid.innerHTML = `
+                   <div class="p-2.5 bg-body border border-primary rounded-lg flex items-center justify-between" style="background:rgba(0,0,0,0.01); border-color:var(--border-primary)">
+                      <div class="flex items-center gap-2">
+                         <i data-lucide="trending-up" class="text-rose-500 w-3 h-3"></i>
+                         <span class="text-[10px] font-bold text-primary uppercase">Fuel Pressure</span>
+                      </div>
+                      <span class="text-[9px] font-mono text-rose-500">+${(econ.pps_petroleum || 0).toFixed(1)}%</span>
+                   </div>
+                   <div class="p-2.5 bg-body border border-primary rounded-lg flex items-center justify-between" style="background:rgba(0,0,0,0.01); border-color:var(--border-primary)">
+                      <div class="flex items-center gap-2">
+                         <i data-lucide="trending-up" class="text-rose-500 w-3 h-3"></i>
+                         <span class="text-[10px] font-bold text-primary uppercase">Food Pressure</span>
+                      </div>
+                      <span class="text-[9px] font-mono text-rose-500">+${(econ.pps_food || 0).toFixed(1)}%</span>
+                   </div>
+                `;
+                if (window.lucide) window.lucide.createIcons();
+            }
+
+            // Update Reserve Vials (Visuals)
+            const fuelVial = document.querySelector('.w-12 .bg-blue-500\\/60');
+            if (fuelVial) {
+                const fill = Math.max(5, 100 - (econ.fuel_distribution_disruption_pct * 100));
+                fuelVial.style.height = `${fill}%`;
+            }
+        }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+/**
+ * common.css - PROJECT ALPHA (v6.6 Copernicus Remodel)
+ * Minimalist Light Mode Foundation
+ * Inspired by dataspace.copernicus.eu
+ */
+
+:root {
+  /* 1. Copernicus Clean Palette */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  
+  --accent-blue: #003366; /* Official Copernicus Blue */
+  --accent-sapphire: #2563eb;
+  --accent-emerald: #059669;
+  --accent-rose: #dc2626;
+  --accent-amber: #d97706;
+  
+  --border-primary: #e2e8f0;
+  --border-accent: #00336644;
+  
+  --panel-radius: 8px;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --font-ui: 'Inter', system-ui, sans-serif;
+  --font-display: 'Outfit', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  font-family: var(--font-ui);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 2. Tactical Sidebar Styles */
+#tactical-sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 260px;
+  background: var(--bg-primary);
+  border-right: 1px solid var(--border-primary);
+  z-index: 50;
+  padding: 1.5rem 1rem;
+}
+
+.sidebar-brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--accent-blue);
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav-item {
+  padding: 0.75rem 1rem;
+  border-radius: var(--panel-radius);
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-item:hover {
+  background: var(--bg-tertiary);
+  color: var(--accent-blue);
+}
+
+.nav-item.active {
+  background: #00336611;
+  color: var(--accent-blue);
+  border-left: 3px solid var(--accent-blue);
+}
+
+/* 3. The Copernicus Card (alpha-card) */
+.alpha-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--panel-radius);
+  box-shadow: var(--shadow-sm);
+  padding: 1.25rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.alpha-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.alpha-card-header {
+  border-bottom: 1px solid var(--border-primary);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.alpha-card-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+/* 4. Map Overlays & Tooltips */
+.alpha-tooltip {
+  background: var(--bg-primary) !important;
+  border: 1px solid var(--accent-blue) !important;
+  color: var(--text-primary) !important;
+  font-family: var(--font-ui) !important;
+  padding: 8px 12px !important;
+  border-radius: 6px !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+/* 5. Live LEDs */
+.led-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-emerald);
+  box-shadow: 0 0 5px var(--accent-emerald);
+}
+
+.led-pulse.active {
+  animation: ledPulse 2s infinite ease-in-out;
+}
+
+@keyframes ledPulse {
+  0% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.2); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.flex-center {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.flex-col {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* 6. Navigation Logic Views */
+.theater-stage {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.theater-stage.active {
+  display: block;
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}

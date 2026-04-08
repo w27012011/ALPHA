@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATMO-BAY | Extreme Weather & Lightning • PROJECT ALPHA</title>
+  
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+</head>
+<body class="selection:bg-blue-500/30 overflow-x-hidden">
+
+  <!-- Main Content -->
+  <main id="main-content" class="ml-64 transition-all duration-300 pt-20 pb-8 px-6">
+    <div class="max-w-7xl mx-auto space-y-4 animate-in">
+      
+      <!-- High-Density Title Bar -->
+      <div class="flex items-center justify-between mb-2">
+        <div>
+          <h2 class="text-2xl font-bold tracking-tight font-display" style="color:var(--text-primary)">Atmosphere Bay</h2>
+          <p class="text-[11px] font-medium" style="color:var(--text-secondary)">Convective CAPE instability monitoring, WWLLN real-time lightning detection, and Kalbaishakhi storm trajectories</p>
+        </div>
+        <div class="flex items-center gap-2">
+           <span class="text-[9px] font-bold uppercase tracking-widest text-secondary" style="color:var(--text-secondary)">WWLLN Pulse: Active</span>
+           <div class="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></div>
+        </div>
+      </div>
+
+      <!-- 1. Tighter Metric Grid -->
+      <div id="metrics-grid" class="grid grid-cols-1 md:grid-cols-3 gap-3">
+        <div class="alpha-box blue flex items-center justify-between">
+          <div>
+            <p class="text-[9px] font-bold uppercase tracking-widest text-secondary" style="color:var(--text-secondary)">Max CAPE Index</p>
+            <h3 data-alpha-bind="atmo.cape_index.CAPE_J_per_kg" class="text-xl font-bold font-mono text-primary" style="color:var(--text-primary)">0 J/KG</h3>
+          </div>
+          <div class="p-2 bg-blue-500/10 rounded-lg"><i data-lucide="thermometer-sun" class="text-blue-500 w-4 h-4"></i></div>
+        </div>
+        <div class="alpha-box blue flex items-center justify-between border-l-4 border-l-blue-500">
+          <div>
+            <p class="text-[9px] font-bold uppercase tracking-widest text-secondary" style="color:var(--text-secondary)">Ground Strikes (6h)</p>
+            <h3 data-alpha-bind="atmo.lightning_processed.strike_count_last_6h" class="text-xl font-bold font-mono text-blue-500">0 DISCH</h3>
+          </div>
+          <div class="p-2 bg-blue-500/10 rounded-lg"><i data-lucide="zap" class="text-blue-500 w-4 h-4"></i></div>
+        </div>
+        <div class="alpha-box blue flex items-center justify-between">
+          <div>
+            <p class="text-[9px] font-bold uppercase tracking-widest text-secondary" style="color:var(--text-secondary)">Wind Velocity</p>
+            <h3 data-alpha-bind="atmo.weather_processed.wind_speed_10m_ms" class="text-xl font-bold font-mono text-primary" style="color:var(--text-primary)">0.0 M/S</h3>
+          </div>
+          <div class="p-2 bg-slate-500/10 rounded-lg"><i data-lucide="wind" class="text-slate-500 w-4 h-4"></i></div>
+        </div>
+      </div>
+
+      <!-- 2. Dual Viewport Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <!-- Lightning Map Box -->
+        <div class="lg:col-span-2 alpha-box blue p-0 overflow-hidden relative" style="height: 480px;">
+          <div id="atmo-lightning-map" class="w-full h-full bg-body" style="background:var(--bg-body)"></div>
+          <div class="absolute bottom-4 left-4 z-10 px-2 py-1 bg-card border border-primary rounded text-[9px] font-bold uppercase tracking-tighter" style="background:var(--bg-card); border-color:var(--border-primary); color:var(--text-secondary)">WWLLN Real-time Lightning Clusters</div>
+        </div>
+
+        <!-- Sidebar Components -->
+        <div class="space-y-4">
+          <!-- Strike Cluster Ticker Box -->
+          <div class="alpha-box blue p-4 bg-body shadow-inner flex flex-col h-[280px]" style="background:rgba(0,0,0,0.02)">
+              <h3 class="text-[9px] font-bold text-secondary mb-4 uppercase tracking-[0.2em] flex items-center justify-between border-b border-primary pb-2" style="border-color:var(--border-primary)">
+                 <span>Strike Trace (M-34)</span>
+                 <i data-lucide="zap" class="text-amber-500 w-3 h-3"></i>
+              </h3>
+              <div id="lightning-pulse-ticker" class="space-y-2 overflow-y-auto pr-1">
+                  <div class="flex items-center justify-between p-2 bg-card border border-primary rounded" style="background:var(--bg-card); border-color:var(--border-primary)">
+                      <div class="text-[9px]"><span class="text-primary font-bold">#8872</span> • 25.8°N / 89.2°E</div>
+                      <span class="text-[8px] text-blue-500 animate-pulse">LIVE</span>
+                  </div>
+                  <div class="flex items-center justify-between p-2 bg-card border border-primary rounded opacity-60" style="background:var(--bg-card); border-color:var(--border-primary)">
+                      <div class="text-[9px]"><span class="text-primary font-bold">#8871</span> • 25.7°N / 89.3°E</div>
+                      <span class="text-[8px] text-secondary">1.4s ago</span>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Convective Cell Box -->
+          <div class="alpha-box blue flex-1 flex flex-col justify-center items-center h-[200px]">
+              <h3 class="text-[9px] font-bold text-secondary mb-6 uppercase tracking-[0.2em]">Storm Tracker (Trajectories)</h3>
+              <div class="grid grid-cols-2 gap-4 w-full px-2">
+                 <div class="p-3 border border-primary rounded-xl flex items-center gap-3" style="border-color:var(--border-primary)">
+                    <i data-lucide="arrow-up-right" class="text-rose-500 w-5 h-5"></i>
+                    <div>
+                      <p class="text-[9px] font-bold text-primary">CELL_ALPHA</p>
+                      <p class="text-[8px] text-secondary font-mono">NW → SE</p>
+                    </div>
+                 </div>
+                 <div class="p-3 border border-primary rounded-xl flex items-center gap-3" style="border-color:var(--border-primary)">
+                    <i data-lucide="arrow-up" class="text-amber-500 w-5 h-5"></i>
+                    <div>
+                      <p class="text-[9px] font-bold text-primary">CELL_BRAVO</p>
+                      <p class="text-[8px] text-secondary font-mono">STATIONARY</p>
+                    </div>
+                 </div>
+              </div>
+              <p class="text-[8px] text-secondary mt-4 leading-tight text-center px-4 opacity-70">Trajectories calculated using CAPE gradients and wind shear monitoring from M-33/35.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="js/navigator.js"></script>
+  <script src="js/app.js"></script>
+  
+  <script>
+    /**
+     * Page Specific Logic: ATMO-BAY (Elegant Duo V4)
+     */
+    window.addEventListener('DOMContentLoaded', () => {
+       initMap();
+    });
+
+    function initMap() {
+      const map = L.map('atmo-lightning-map', {
+        zoomControl: true,
+        attributionControl: false
+      }).setView([23.8103, 90.4125], 7);
+
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png').addTo(map);
+
+      const lightningLayer = L.layerGroup().addTo(map);
+      const ticker = document.getElementById('lightning-pulse-ticker');
+
+      window.addEventListener('AlphaDataSync', (e) => {
+          const bus = e.detail.bus || [];
+          const clusters = {};
+
+          bus.forEach(entry => {
+              if (entry.channel === 'atmo.lightning_processed') {
+                  const val = entry.message;
+                  if (val.cluster_centroid_lat && !clusters[val.district_code]) {
+                      clusters[val.district_code] = val;
+                  }
+              }
+          });
+
+          lightningLayer.clearLayers();
+          if (ticker) ticker.innerHTML = '';
+
+          Object.values(clusters).forEach(c => {
+              // Map Marker
+              const circle = L.circleMarker([c.cluster_centroid_lat, c.cluster_centroid_lon], {
+                  radius: 8, fillColor: '#fff', color: '#3b82f6', weight: 4, fillOpacity: 0.8
+              }).addTo(lightningLayer).bindTooltip(`Cluster: ${c.district_code}<br>Strikes: ${c.strike_count_last_6h}`, { direction: 'top' });
+
+              // Ticker
+              if (ticker) {
+                  const div = document.createElement('div');
+                  div.className = "flex items-center justify-between p-2 bg-card border border-primary rounded";
+                  div.style.background = "var(--bg-card)";
+                  div.style.borderColor = "var(--border-primary)";
+                  div.innerHTML = `
+                      <div class="text-[9px]"><span class="text-primary font-bold">${c.district_code}</span> • ${c.strike_density_per_km2.toFixed(4)} dens</div>
+                      <span class="text-[8px] text-blue-500 animate-pulse">DETECTED</span>
+                  `;
+                  ticker.appendChild(div);
+              }
+          });
+      });
+    }
+  </script>
+</body>
+</html>

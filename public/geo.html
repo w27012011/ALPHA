@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GEO-BAY | Riverbank Erosion & Seismic • PROJECT ALPHA</title>
+  
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+</head>
+<body class="selection:bg-blue-500/30 overflow-x-hidden">
+
+  <!-- Main Content -->
+  <main id="main-content" class="ml-64 transition-all duration-300 pt-20 pb-8 px-6">
+    <div class="max-w-7xl mx-auto space-y-4 animate-in">
+      
+      <!-- High-Density Title Bar -->
+      <div class="flex items-center justify-between mb-2">
+        <div>
+          <h2 class="text-2xl font-bold tracking-tight font-display" style="color:var(--text-primary)">Geology Bay</h2>
+          <p class="text-[11px] font-medium" style="color:var(--text-secondary)">Satellite InSAR displacement tracking, Mohr-Coulomb shear analysis, and seismic liquefaction nowcasting</p>
+        </div>
+        <div class="flex items-center gap-2">
+           <span class="text-[9px] font-bold uppercase tracking-widest text-secondary" style="color:var(--text-secondary)">InSAR Sync: Active</span>
+           <div class="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse"></div>
+        </div>
+      </div>
+
+      <!-- 1. Tighter Metric Grid -->
+      <div id="metrics-grid" class="grid grid-cols-1 md:grid-cols-3 gap-3">
+        <div class="alpha-box amber flex items-center justify-between">
+          <div>
+            <p class="text-[9px] font-bold uppercase tracking-widest text-secondary" style="color:var(--text-secondary)">Max Bank Displacement</p>
+            <h3 data-alpha-bind="erosion_alerts.displacement_mm" class="text-xl font-bold font-mono text-primary" style="color:var(--text-primary)">0 mm</h3>
+          </div>
+          <div class="p-2 bg-orange-500/10 rounded-lg"><i data-lucide="move" class="text-orange-500 w-4 h-4"></i></div>
+        </div>
+        <div class="alpha-box amber flex items-center justify-between border-l-4 border-l-rose-500">
+          <div>
+            <p class="text-[9px] font-bold uppercase tracking-widest text-secondary" style="color:var(--text-secondary)">Collapse Probability</p>
+            <h3 data-alpha-bind="erosion_alerts.failure_probability" class="text-xl font-bold font-mono text-rose-500">0.00</h3>
+          </div>
+          <div class="p-2 bg-rose-500/10 rounded-lg"><i data-lucide="alert-triangle" class="text-rose-500 w-4 h-4"></i></div>
+        </div>
+        <div class="alpha-box amber flex items-center justify-between">
+          <div>
+            <p class="text-[9px] font-bold uppercase tracking-widest text-secondary" style="color:var(--text-secondary)">Seismic Mag (Last)</p>
+            <h3 data-alpha-bind="raw.earthquake_events.magnitude" class="text-xl font-bold font-mono text-primary" style="color:var(--text-primary)">M 0.0</h3>
+          </div>
+          <div class="p-2 bg-blue-500/10 rounded-lg"><i data-lucide="mountain" class="text-blue-500 w-4 h-4"></i></div>
+        </div>
+      </div>
+
+      <!-- 2. Main Visual Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <!-- InSAR Displacement Map -->
+        <div class="alpha-box amber p-0 overflow-hidden relative" style="height: 400px;">
+          <div id="insar-displacement-map" class="w-full h-full bg-body" style="background:var(--bg-body)"></div>
+          <div class="absolute bottom-4 left-4 z-10 px-2 py-1 bg-card border border-primary rounded text-[9px] font-bold uppercase tracking-tighter" style="background:var(--bg-card); border-color:var(--border-primary); color:var(--text-secondary)">InSAR Satellite Points • Bank Shift</div>
+          <div class="absolute top-4 right-4 z-10 text-[8px] font-bold uppercase text-secondary opacity-50">Click & Drag Explore</div>
+        </div>
+
+        <!-- Sidebar Components -->
+        <div class="space-y-4">
+          <!-- Mohr-Coulomb Factor of Safety Box -->
+          <div class="alpha-box amber flex flex-col items-center justify-center text-center py-8">
+              <h3 class="text-[9px] font-bold text-secondary mb-6 uppercase tracking-[0.2em]">Mohr-Coulomb Factor of Safety (FS)</h3>
+              <div class="relative w-32 h-32 flex items-center justify-center">
+                 <svg class="w-full h-full transform -rotate-90">
+                    <circle cx="64" cy="64" r="56" stroke="rgba(0,0,0,0.05)" stroke-width="8" fill="none"></circle>
+                    <circle cx="64" cy="64" r="56" stroke="var(--accent-amber)" stroke-width="8" fill="none" stroke-dasharray="351" stroke-dashoffset="151"></circle>
+                 </svg>
+                 <div class="absolute inset-0 flex flex-col items-center justify-center">
+                    <span class="text-2xl font-bold text-primary font-mono" id="fs-gauge-value">0.86</span>
+                    <span class="text-[8px] font-bold text-rose-500 uppercase">Unstable</span>
+                 </div>
+              </div>
+              <p class="text-[9px] text-secondary mt-6 max-w-[240px]">Current shear strength is compromised by hydraulic loading from M-07 surge wave.</p>
+          </div>
+
+          <!-- Seismic Event Ticker Box -->
+          <div class="alpha-box amber p-4 bg-body shadow-inner h-[250px]" style="background:rgba(0,0,0,0.02)">
+              <h3 class="text-[9px] font-bold text-secondary mb-4 uppercase tracking-[0.2em] flex items-center justify-between border-b border-primary pb-2" style="border-color:var(--border-primary)">
+                 <span>USGS Seismic Feed</span>
+                 <span class="text-[8px] px-1.5 py-0.5 bg-blue-500/10 text-blue-500 rounded font-mono">Last 24h</span>
+              </h3>
+              <div id="seismic-events-ticker" class="space-y-2 font-mono">
+                  <div class="flex justify-between items-center p-2 bg-card border border-primary rounded" style="background:var(--bg-card); border-color:var(--border-primary)">
+                     <div class="text-[9px]"><span class="text-primary font-bold">M 4.2</span> • 42km Depth • Kurigram</div>
+                     <span class="text-[8px] text-secondary">12:04 UTC</span>
+                  </div>
+                  <div class="flex justify-between items-center p-2 bg-card border border-primary rounded opacity-60" style="background:var(--bg-card); border-color:var(--border-primary)">
+                     <div class="text-[9px]"><span class="text-primary font-bold">M 3.8</span> • 12km Depth • Sylhet</div>
+                     <span class="text-[8px] text-secondary">08:12 UTC</span>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="js/navigator.js"></script>
+  <script src="js/app.js"></script>
+  
+  <script>
+    /**
+     * Page Specific Logic: GEO-BAY (Elegant Duo V4)
+     */
+    window.addEventListener('DOMContentLoaded', () => {
+       initMap();
+    });
+
+    function initMap() {
+      const map = L.map('insar-displacement-map', {
+        zoomControl: true,
+        attributionControl: false
+      }).setView([23.8103, 90.4125], 7);
+
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png').addTo(map);
+
+      const markerLayer = L.layerGroup().addTo(map);
+      const ticker = document.getElementById('seismic-events-ticker');
+
+      window.addEventListener('AlphaDataSync', (e) => {
+          const bus = e.detail.bus || [];
+          const geoAlerts = {};
+          const earthquakes = [];
+
+          bus.forEach(entry => {
+              if (entry.channel === 'erosion_alerts') {
+                  const val = entry.message;
+                  if (!geoAlerts[val.segment_id]) geoAlerts[val.segment_id] = val;
+              }
+              if (entry.channel === 'raw.earthquake_events') {
+                  earthquakes.push(entry.message);
+              }
+          });
+
+          // 1. Update InSAR/Erosion Markers
+          markerLayer.clearLayers();
+          Object.values(geoAlerts).forEach(p => {
+              const color = p.alert_level === 'CRITICAL' || p.alert_level === 'RED' ? '#f43f5e' : '#f59e0b';
+              L.circleMarker([p.site_lat, p.site_lon], {
+                  radius: 4, fillColor: color, color: '#fff', weight: 1, fillOpacity: 1
+              }).addTo(markerLayer).bindTooltip(`ID: ${p.segment_id}<br>Disp: ${p.displacement_mm}mm<br>Prob: ${p.failure_probability}`, { direction: 'right' });
+          });
+
+          // 2. Update Gauge
+          const lastAlert = Object.values(geoAlerts)[0];
+          if (lastAlert && lastAlert.stress_ratio) {
+              const gaugeVal = document.getElementById('fs-gauge-value');
+              const fs = 1 / lastAlert.stress_ratio;
+              gaugeVal.innerText = fs.toFixed(2);
+          }
+
+          // 3. Update Seismic Ticker
+          if (ticker && earthquakes.length > 0) {
+              ticker.innerHTML = '';
+              earthquakes.slice(0, 4).forEach(eq => {
+                  const time = new Date(eq.event_time).toISOString().split('T')[1].split('.')[0];
+                  const div = document.createElement('div');
+                  div.className = "flex justify-between items-center p-2 bg-card border border-primary rounded";
+                  div.style.background = "var(--bg-card)";
+                  div.style.borderColor = "var(--border-primary)";
+                  div.innerHTML = `
+                     <div class="text-[9px]"><span class="text-primary font-bold">M ${eq.magnitude}</span> • ${eq.depth_km}km • ${eq.place_description || 'Region'}</div>
+                     <span class="text-[8px] text-secondary">${time} UTC</span>
+                  `;
+                  ticker.appendChild(div);
+              });
+          }
+      });
+    }
+  </script>
+</body>
+</html>

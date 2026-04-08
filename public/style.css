@@ -1,0 +1,308 @@
+/* 
+  style.css - PROJECT ALPHA COMMAND CENTER
+  Aesthetic: Premium Government Tactical UI (Obsidian Glass)
+  Version: 3.0 (8-Bay Command)
+*/
+
+:root {
+  /* 1. Base Obsidian Theme Tones */
+  --bg-obsidian: hsl(220, 15%, 5%);
+  --bg-panel: hsla(220, 15%, 15%, 0.6);
+  --bg-active: hsla(220, 70%, 50%, 0.15);
+  --border-dim: hsla(220, 10%, 30%, 0.3);
+  --border-bright: hsla(220, 10%, 70%, 0.15);
+  
+  /* 2. Hazard Semantic Colors */
+  --tone-safe: hsl(150, 70%, 50%);         /* HPS < 1.0 */
+  --tone-elevated: hsl(50, 90%, 50%);     /* HPS 1.0-2.5 */
+  --tone-warning: hsl(35, 100%, 50%);     /* HPS 2.5-3.5 */
+  --tone-critical: hsl(0, 90%, 60%);      /* HPS > 3.5 */
+  
+  /* 3. Global Constants */
+  --sidebar-width: 280px;
+  --font-ui: 'Inter', sans-serif;
+  --font-display: 'Outfit', sans-serif;
+  --panel-radius: 12px;
+  --glass-blur: blur(16px);
+  --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-ui);
+  background-color: var(--bg-obsidian);
+  color: #fff;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  background-image: url('assets/hud_bg.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* --- TACTICAL SIDEBAR --- */
+#tactical-sidebar {
+  width: var(--sidebar-width);
+  height: 100%;
+  background: hsla(220, 15%, 10%, 0.85);
+  backdrop-filter: var(--glass-blur);
+  border-right: 1px solid var(--border-bright);
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  z-index: 100;
+}
+
+.brand {
+  margin-bottom: 32px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.brand-title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 2.2rem;
+  letter-spacing: -2px;
+  background: linear-gradient(to bottom, #fff, #aaa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.brand-ver {
+  font-size: 0.7rem;
+  opacity: 0.5;
+  font-weight: 600;
+}
+
+#national-clock {
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  opacity: 0.7;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+}
+
+.nav-links {
+  list-style: none;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.nav-divider {
+  font-size: 0.65rem;
+  font-weight: 800;
+  opacity: 0.3;
+  margin: 24px 0 8px 16px;
+  letter-spacing: 2px;
+}
+
+.nav-links li {
+  padding: 14px 16px;
+  margin-bottom: 4px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: var(--transition-smooth);
+  border: 1px solid transparent;
+  color: hsla(0, 0%, 100%, 0.5);
+}
+
+.nav-links li:hover {
+  background: hsla(220, 15%, 30%, 0.2);
+  color: #fff;
+}
+
+.nav-links li.active {
+  background: var(--bg-active);
+  color: #fff;
+  border-color: hsla(220, 70%, 50%, 0.4);
+  box-shadow: 0 4px 15px hsla(220, 70%, 20%, 0.5);
+}
+
+.nav-icon { font-size: 1.1rem; }
+.nav-text { font-weight: 600; font-size: 0.8rem; letter-spacing: 0.5px; }
+
+.sidebar-bottom { margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--border-bright); }
+.system-status { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; font-size: 0.7rem; font-weight: 800; opacity: 0.6; }
+.status-led-main { width: 8px; height: 8px; border-radius: 50%; }
+
+.tactical-btn {
+  background: hsla(220, 70%, 50%, 0.2);
+  border: 1px solid hsla(220, 70%, 50%, 0.5);
+  color: #fff;
+  padding: 12px;
+  border-radius: 6px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  width: 100%;
+}
+
+.tactical-btn:hover { background: hsla(220, 70%, 50%, 0.4); transform: translateY(-2px); }
+
+/* --- COMMAND THEATER --- */
+#command-theater {
+  flex-grow: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.theater-stage {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.theater-stage.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* --- UTILITIES --- */
+.alpha-glass {
+  background: var(--bg-panel);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border-bright);
+  border-radius: var(--panel-radius);
+  padding: 24px;
+}
+
+.grid-2x2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 24px;
+    flex-grow: 1;
+}
+
+h3 {
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 800;
+    opacity: 0.6;
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+}
+
+/* --- BAY 1: STRAT-MASTER --- */
+.primary-layout {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 24px;
+    flex-grow: 1;
+}
+
+#alpha-map-master {
+    height: 100%;
+    border-radius: var(--panel-radius);
+    background: #000;
+    box-shadow: inset 0 0 50px #000;
+}
+
+#master-probability-tree {
+    height: 400px;
+    margin-bottom: 24px;
+}
+
+#strat-sidebar .panel-header {
+    font-size: 0.7rem;
+    font-weight: 900;
+    opacity: 0.5;
+    margin-bottom: 12px;
+}
+
+/* --- BAY 7: ECON BAY --- */
+.econ-dashboard {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    grid-template-rows: auto 1fr;
+    gap: 24px;
+    flex-grow: 1;
+}
+
+.panel-indicators { grid-column: span 2; }
+
+/* --- BAY 8: NERVE-CONTROL --- */
+.nerve-layout {
+    display: grid;
+    grid-template-columns: 1fr 450px;
+    gap: 24px;
+    flex-grow: 1;
+}
+
+.health-grid { overflow-y: auto; }
+#module-health-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+}
+
+.module-led-card {
+    padding: 16px;
+    background: hsla(220, 15%, 5%, 0.4);
+    border: 1px solid var(--border-bright);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: help;
+    transition: var(--transition-smooth);
+}
+
+.module-led-card:hover { background: hsla(220, 15%, 20%, 0.4); transform: scale(1.02); }
+.led-state { width: 10px; height: 10px; border-radius: 50%; background: #333; }
+.led-state.green { background: var(--tone-safe); box-shadow: 0 0 10px var(--tone-safe); }
+.led-state.amber { background: var(--tone-elevated); box-shadow: 0 0 10px var(--tone-elevated); }
+.led-state.red { background: var(--tone-critical); box-shadow: 0 0 10px var(--tone-critical); }
+.module-id { font-size: 0.75rem; font-weight: 800; opacity: 0.8; }
+
+#bus-live-log {
+    background: rgba(0,0,0,0.4);
+    font-family: 'Courier New', monospace;
+    font-size: 0.75rem;
+    padding: 16px;
+    height: 100%;
+    overflow-y: auto;
+    border-radius: 8px;
+}
+
+/* --- TACTICAL DRAWER --- */
+#tactical-drawer {
+  position: fixed;
+  top: 24px; right: 24px;
+  width: 500px;
+  height: calc(100vh - 48px);
+  z-index: 200;
+  padding: 0;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateX(120%);
+}
+
+#tactical-drawer.active { transform: translateX(0); }
+.drawer-inner { height: 100%; display: flex; flex-direction: column; padding: 40px; }
+.close-btn { align-self: flex-end; background: none; border: none; color: #fff; font-size: 2rem; cursor: pointer; opacity: 0.5; }
+.close-btn:hover { opacity: 1; }
+
+/* ANIMATIONS */
+@keyframes pulse { 0% { opacity: 0.4; } 50% { opacity: 1; } 100% { opacity: 0.4; } }
+.pulse-green { animation: pulse 2s infinite ease-in-out; background: var(--tone-safe); box-shadow: 0 0 10px var(--tone-safe); }

@@ -1,0 +1,1 @@
+{"schema_version":"v3.0","expires_at_utc":1775568438,"payload":{"mapped_grid":[{"grid_id":"23.5_90.0","lat":23.5,"lon":90.0,"temperature_2m_K":301.5,"dewpoint_2m_K":295.0,"u_wind_10m_ms":2.5,"v_wind_10m_ms":-1.2,"total_precipitation_m":0.005,"soil_moisture_level1_m3m3":0.35,"valid_time":"2026-04-07T07:27:18.498841+00:00Z"}]}}

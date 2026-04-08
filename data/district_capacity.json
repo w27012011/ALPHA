@@ -1,0 +1,322 @@
+{
+  "BD-01": {
+    "food_reserves_mt": 9991,
+    "medical_kits": 3489,
+    "shelter_capacity": 12489
+  },
+  "BD-02": {
+    "food_reserves_mt": 10724,
+    "medical_kits": 4406,
+    "shelter_capacity": 13406
+  },
+  "BD-03": {
+    "food_reserves_mt": 9887,
+    "medical_kits": 4359,
+    "shelter_capacity": 12359
+  },
+  "BD-04": {
+    "food_reserves_mt": 10849,
+    "medical_kits": 3562,
+    "shelter_capacity": 13562
+  },
+  "BD-05": {
+    "food_reserves_mt": 10056,
+    "medical_kits": 4571,
+    "shelter_capacity": 12571
+  },
+  "BD-06": {
+    "food_reserves_mt": 10968,
+    "medical_kits": 4710,
+    "shelter_capacity": 13710
+  },
+  "BD-07": {
+    "food_reserves_mt": 10792,
+    "medical_kits": 4491,
+    "shelter_capacity": 13491
+  },
+  "BD-08": {
+    "food_reserves_mt": 9498,
+    "medical_kits": 4873,
+    "shelter_capacity": 11873
+  },
+  "BD-09": {
+    "food_reserves_mt": 9523,
+    "medical_kits": 4904,
+    "shelter_capacity": 11904
+  },
+  "BD-10": {
+    "food_reserves_mt": 11912,
+    "medical_kits": 4890,
+    "shelter_capacity": 14890
+  },
+  "BD-11": {
+    "food_reserves_mt": 11489,
+    "medical_kits": 4362,
+    "shelter_capacity": 14362
+  },
+  "BD-12": {
+    "food_reserves_mt": 8352,
+    "medical_kits": 4441,
+    "shelter_capacity": 10441
+  },
+  "BD-13": {
+    "food_reserves_mt": 10104,
+    "medical_kits": 4630,
+    "shelter_capacity": 12630
+  },
+  "BD-14": {
+    "food_reserves_mt": 11263,
+    "medical_kits": 4079,
+    "shelter_capacity": 14079
+  },
+  "BD-15": {
+    "food_reserves_mt": 8259,
+    "medical_kits": 4324,
+    "shelter_capacity": 10324
+  },
+  "BD-16": {
+    "food_reserves_mt": 8732,
+    "medical_kits": 4915,
+    "shelter_capacity": 10915
+  },
+  "BD-17": {
+    "food_reserves_mt": 30847,
+    "medical_kits": 7706,
+    "shelter_capacity": 38559
+  },
+  "BD-18": {
+    "food_reserves_mt": 26136,
+    "medical_kits": 9780,
+    "shelter_capacity": 32670
+  },
+  "BD-19": {
+    "food_reserves_mt": 8271,
+    "medical_kits": 4339,
+    "shelter_capacity": 10339
+  },
+  "BD-20": {
+    "food_reserves_mt": 25293,
+    "medical_kits": 9078,
+    "shelter_capacity": 31617
+  },
+  "BD-21": {
+    "food_reserves_mt": 11956,
+    "medical_kits": 4945,
+    "shelter_capacity": 14945
+  },
+  "BD-22": {
+    "food_reserves_mt": 34754,
+    "medical_kits": 6962,
+    "shelter_capacity": 43443
+  },
+  "BD-23": {
+    "food_reserves_mt": 34437,
+    "medical_kits": 6698,
+    "shelter_capacity": 43047
+  },
+  "BD-24": {
+    "food_reserves_mt": 8756,
+    "medical_kits": 4946,
+    "shelter_capacity": 10946
+  },
+  "BD-25": {
+    "food_reserves_mt": 34312,
+    "medical_kits": 8594,
+    "shelter_capacity": 42891
+  },
+  "BD-26": {
+    "food_reserves_mt": 11794,
+    "medical_kits": 4743,
+    "shelter_capacity": 14743
+  },
+  "BD-27": {
+    "food_reserves_mt": 10492,
+    "medical_kits": 3116,
+    "shelter_capacity": 13116
+  },
+  "BD-28": {
+    "food_reserves_mt": 8824,
+    "medical_kits": 3030,
+    "shelter_capacity": 11030
+  },
+  "BD-29": {
+    "food_reserves_mt": 30895,
+    "medical_kits": 9746,
+    "shelter_capacity": 38619
+  },
+  "BD-30": {
+    "food_reserves_mt": 11253,
+    "medical_kits": 3067,
+    "shelter_capacity": 14067
+  },
+  "BD-31": {
+    "food_reserves_mt": 9493,
+    "medical_kits": 4867,
+    "shelter_capacity": 11867
+  },
+  "BD-32": {
+    "food_reserves_mt": 9354,
+    "medical_kits": 4693,
+    "shelter_capacity": 11693
+  },
+  "BD-33": {
+    "food_reserves_mt": 10579,
+    "medical_kits": 4224,
+    "shelter_capacity": 13224
+  },
+  "BD-34": {
+    "food_reserves_mt": 29414,
+    "medical_kits": 8512,
+    "shelter_capacity": 36768
+  },
+  "BD-35": {
+    "food_reserves_mt": 11309,
+    "medical_kits": 3137,
+    "shelter_capacity": 14137
+  },
+  "BD-36": {
+    "food_reserves_mt": 10009,
+    "medical_kits": 4512,
+    "shelter_capacity": 12512
+  },
+  "BD-37": {
+    "food_reserves_mt": 8162,
+    "medical_kits": 3203,
+    "shelter_capacity": 10203
+  },
+  "BD-38": {
+    "food_reserves_mt": 8045,
+    "medical_kits": 3057,
+    "shelter_capacity": 10057
+  },
+  "BD-39": {
+    "food_reserves_mt": 10081,
+    "medical_kits": 3602,
+    "shelter_capacity": 12602
+  },
+  "BD-40": {
+    "food_reserves_mt": 11460,
+    "medical_kits": 3326,
+    "shelter_capacity": 14326
+  },
+  "BD-41": {
+    "food_reserves_mt": 9856,
+    "medical_kits": 4320,
+    "shelter_capacity": 12320
+  },
+  "BD-42": {
+    "food_reserves_mt": 9019,
+    "medical_kits": 3274,
+    "shelter_capacity": 11274
+  },
+  "BD-43": {
+    "food_reserves_mt": 11104,
+    "medical_kits": 4880,
+    "shelter_capacity": 13880
+  },
+  "BD-44": {
+    "food_reserves_mt": 8328,
+    "medical_kits": 3411,
+    "shelter_capacity": 10411
+  },
+  "BD-45": {
+    "food_reserves_mt": 9048,
+    "medical_kits": 3311,
+    "shelter_capacity": 11311
+  },
+  "BD-46": {
+    "food_reserves_mt": 8615,
+    "medical_kits": 4769,
+    "shelter_capacity": 10769
+  },
+  "BD-47": {
+    "food_reserves_mt": 9838,
+    "medical_kits": 3298,
+    "shelter_capacity": 12298
+  },
+  "BD-48": {
+    "food_reserves_mt": 8037,
+    "medical_kits": 3047,
+    "shelter_capacity": 10047
+  },
+  "BD-49": {
+    "food_reserves_mt": 9069,
+    "medical_kits": 4337,
+    "shelter_capacity": 11337
+  },
+  "BD-50": {
+    "food_reserves_mt": 8502,
+    "medical_kits": 4628,
+    "shelter_capacity": 10628
+  },
+  "BD-51": {
+    "food_reserves_mt": 27765,
+    "medical_kits": 7138,
+    "shelter_capacity": 34707
+  },
+  "BD-52": {
+    "food_reserves_mt": 24808,
+    "medical_kits": 8674,
+    "shelter_capacity": 31011
+  },
+  "BD-53": {
+    "food_reserves_mt": 33744,
+    "medical_kits": 6120,
+    "shelter_capacity": 42180
+  },
+  "BD-54": {
+    "food_reserves_mt": 35882,
+    "medical_kits": 9902,
+    "shelter_capacity": 44853
+  },
+  "BD-55": {
+    "food_reserves_mt": 34749,
+    "medical_kits": 6958,
+    "shelter_capacity": 43437
+  },
+  "BD-56": {
+    "food_reserves_mt": 26028,
+    "medical_kits": 9690,
+    "shelter_capacity": 32535
+  },
+  "BD-57": {
+    "food_reserves_mt": 10320,
+    "medical_kits": 3900,
+    "shelter_capacity": 12900
+  },
+  "BD-58": {
+    "food_reserves_mt": 10741,
+    "medical_kits": 3427,
+    "shelter_capacity": 13427
+  },
+  "BD-59": {
+    "food_reserves_mt": 10743,
+    "medical_kits": 4429,
+    "shelter_capacity": 13429
+  },
+  "BD-60": {
+    "food_reserves_mt": 10466,
+    "medical_kits": 4083,
+    "shelter_capacity": 13083
+  },
+  "BD-61": {
+    "food_reserves_mt": 10310,
+    "medical_kits": 3888,
+    "shelter_capacity": 12888
+  },
+  "BD-62": {
+    "food_reserves_mt": 10558,
+    "medical_kits": 4198,
+    "shelter_capacity": 13198
+  },
+  "BD-63": {
+    "food_reserves_mt": 8219,
+    "medical_kits": 4274,
+    "shelter_capacity": 10274
+  },
+  "BD-64": {
+    "food_reserves_mt": 11040,
+    "medical_kits": 4801,
+    "shelter_capacity": 13801
+  }
+}

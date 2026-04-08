@@ -1,0 +1,132 @@
+{
+  "version": "1.0.0",
+  "source": "USS Part VI",
+  "pairs": [
+    {
+      "source_hazard": "HYDRO",
+      "target_hazard": "AQUA",
+      "lag_mean_days": 7.0,
+      "lag_peak_days": 5.0,
+      "lag_std_days": 2.0,
+      "base_transmission_probability": 0.4,
+      "mechanism_description": "Flood drawdown mobilises arsenic from reducing sediments"
+    },
+    {
+      "source_hazard": "HYDRO",
+      "target_hazard": "GEO",
+      "lag_mean_days": 3.0,
+      "lag_peak_days": 2.0,
+      "lag_std_days": 1.0,
+      "base_transmission_probability": 0.5,
+      "mechanism_description": "Hydraulic loading accelerates riverbank erosion"
+    },
+    {
+      "source_hazard": "HYDRO",
+      "target_hazard": "AGRI",
+      "lag_mean_days": 14.0,
+      "lag_peak_days": 10.0,
+      "lag_std_days": 3.0,
+      "base_transmission_probability": 0.7,
+      "mechanism_description": "Inundation destroys standing crops before harvest"
+    },
+    {
+      "source_hazard": "HYDRO",
+      "target_hazard": "ECON",
+      "lag_mean_days": 5.0,
+      "lag_peak_days": 3.0,
+      "lag_std_days": 2.0,
+      "base_transmission_probability": 0.6,
+      "mechanism_description": "Flood destroys road network, disrupts fuel/food distribution"
+    },
+    {
+      "source_hazard": "GEO",
+      "target_hazard": "HYDRO",
+      "lag_mean_days": 2.0,
+      "lag_peak_days": 1.0,
+      "lag_std_days": 1.0,
+      "base_transmission_probability": 0.35,
+      "mechanism_description": "Riverbank collapse blocks flow, accelerates upstream flooding"
+    },
+    {
+      "source_hazard": "GEO",
+      "target_hazard": "AQUA",
+      "lag_mean_days": 4.0,
+      "lag_peak_days": 2.0,
+      "lag_std_days": 1.5,
+      "base_transmission_probability": 0.25,
+      "mechanism_description": "Seismic/erosion events disturb aquifer reducing conditions"
+    },
+    {
+      "source_hazard": "ATMO",
+      "target_hazard": "HYDRO",
+      "lag_mean_days": 2.0,
+      "lag_peak_days": 1.0,
+      "lag_std_days": 1.0,
+      "base_transmission_probability": 0.85,
+      "mechanism_description": "Rainfall and storm surge drive flood wave"
+    },
+    {
+      "source_hazard": "ATMO",
+      "target_hazard": "GEO",
+      "lag_mean_days": 1.0,
+      "lag_peak_days": 0.5,
+      "lag_std_days": 0.5,
+      "base_transmission_probability": 0.45,
+      "mechanism_description": "Cyclone wind loading on riverbanks increases erosion risk"
+    },
+    {
+      "source_hazard": "ATMO",
+      "target_hazard": "AGRI",
+      "lag_mean_days": 5.0,
+      "lag_peak_days": 3.0,
+      "lag_std_days": 2.0,
+      "base_transmission_probability": 0.65,
+      "mechanism_description": "Storm damages crops, delays harvest"
+    },
+    {
+      "source_hazard": "ATMO",
+      "target_hazard": "ECON",
+      "lag_mean_days": 3.0,
+      "lag_peak_days": 2.0,
+      "lag_std_days": 1.0,
+      "base_transmission_probability": 0.75,
+      "mechanism_description": "Cyclone closes Chittagong port, disrupts imports"
+    },
+    {
+      "source_hazard": "AGRI",
+      "target_hazard": "ECON",
+      "lag_mean_days": 30.0,
+      "lag_peak_days": 20.0,
+      "lag_std_days": 10.0,
+      "base_transmission_probability": 0.8,
+      "mechanism_description": "Crop loss triggers food price pressure and forex drain"
+    },
+    {
+      "source_hazard": "ECON",
+      "target_hazard": "AGRI",
+      "lag_mean_days": 45.0,
+      "lag_peak_days": 30.0,
+      "lag_std_days": 15.0,
+      "base_transmission_probability": 0.55,
+      "mechanism_description": "Import restrictions reduce fertiliser/seed availability"
+    },
+    {
+      "source_hazard": "ECON",
+      "target_hazard": "HYDRO",
+      "lag_mean_days": 90.0,
+      "lag_peak_days": 60.0,
+      "lag_std_days": 30.0,
+      "base_transmission_probability": 0.4,
+      "mechanism_description": "Fiscal pressure delays flood embankment maintenance"
+    },
+    {
+      "source_hazard": "AQUA",
+      "target_hazard": "ECON",
+      "lag_mean_days": 120.0,
+      "lag_peak_days": 90.0,
+      "lag_std_days": 20.0,
+      "base_transmission_probability": 0.6,
+      "mechanism_description": "Mass arsenic contamination triggers healthcare demand spike"
+    }
+  ]
+}

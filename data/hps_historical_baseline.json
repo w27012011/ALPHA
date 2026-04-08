@@ -1,0 +1,2822 @@
+{
+  "SW252": {
+    "monthly_profile": [
+      4.32,
+      3.78,
+      4.86,
+      5.94,
+      7.56,
+      9.18,
+      10.26,
+      9.94,
+      8.64,
+      6.48,
+      5.4,
+      4.86
+    ],
+    "danger_level": 10.8,
+    "recorded_highest_level": 0.0,
+    "station_name": "Gowainghat",
+    "river": "Sarigowain"
+  },
+  "SW272.1": {
+    "monthly_profile": [
+      2.07,
+      1.81,
+      2.33,
+      2.85,
+      3.63,
+      4.4,
+      4.92,
+      4.77,
+      4.14,
+      3.11,
+      2.59,
+      2.33
+    ],
+    "danger_level": 5.18,
+    "recorded_highest_level": 0.0,
+    "station_name": "Austogram",
+    "river": "Surma-Meghna"
+  },
+  "SW311": {
+    "monthly_profile": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "danger_level": 0.0,
+    "recorded_highest_level": 0.0,
+    "station_name": "Atpara",
+    "river": "Mogra"
+  },
+  "SW271": {
+    "monthly_profile": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "danger_level": 0.0,
+    "recorded_highest_level": 0.0,
+    "station_name": "Azmiriganj",
+    "river": "Kalni"
+  },
+  "SW311.4": {
+    "monthly_profile": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "danger_level": 0.0,
+    "recorded_highest_level": 0.0,
+    "station_name": "Chamraghat",
+    "river": "Mogra"
+  },
+  "SW332": {
+    "monthly_profile": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "danger_level": 0.0,
+    "recorded_highest_level": 0.0,
+    "station_name": "Islampur",
+    "river": "Dhalagang"
+  },
+  "SW73": {
+    "monthly_profile": [
+      2.8,
+      2.45,
+      3.15,
+      3.86,
+      4.91,
+      5.96,
+      6.66,
+      6.45,
+      5.61,
+      4.21,
+      3.5,
+      3.15
+    ],
+    "danger_level": 7.01,
+    "recorded_highest_level": 0.0,
+    "station_name": "Itna",
+    "river": "Dhanu-Baulai-Ghorautra"
+  },
+  "SW233A": {
+    "monthly_profile": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "danger_level": 0.0,
+    "recorded_highest_level": 0.0,
+    "station_name": "Jafflong",
+    "river": "Piyain"
+  },
+  "SW352": {
+    "monthly_profile": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "danger_level": 0.0,
+    "recorded_highest_level": 0.0,
+    "station_name": "Jagannathpur",
+    "river": "Noljur"
+  },
+  "SW135": {
+    "monthly_profile": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "danger_level": 0.0,
+    "recorded_highest_level": 0.0,
+    "station_name": "Juri_Silghat",
+    "river": "Juri"
+  },
+  "SW310": {
+    "monthly_profile": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "danger_level": 0.0,
+    "recorded_highest_level": 0.0,
+    "station_name": "Netrokona",
+    "river": "Mogra"
+  },
+  "SW354": {
+    "monthly_profile": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "danger_level": 0.0,
+    "recorded_highest_level": 0.0,
+    "station_name": "Solemanpur",
+    "river": "Patnaigang"
+  },
+  "SW280": {
+    "monthly_profile": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "danger_level": 0.0,
+    "recorded_highest_level": 0.0,
+    "station_name": "Sutang-RB",
+    "river": "Sutang"
+  },
+  "SW351": {
+    "monthly_profile": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "danger_level": 0.0,
+    "recorded_highest_level": 0.0,
+    "station_name": "Akhterpara",
+    "river": "Mahasing"
+  },
+  "SW81": {
+    "monthly_profile": [
+      11.84,
+      10.36,
+      13.32,
+      16.28,
+      20.72,
+      25.16,
+      28.12,
+      27.23,
+      23.68,
+      17.76,
+      14.8,
+      13.32
+    ],
+    "danger_level": 29.6,
+    "recorded_highest_level": 30.85,
+    "station_name": "Pateswari",
+    "river": "Dudkumar"
+  },
+  "SW77": {
+    "monthly_profile": [
+      10.42,
+      9.12,
+      11.72,
+      14.33,
+      18.23,
+      22.14,
+      24.75,
+      23.97,
+      20.84,
+      15.63,
+      13.03,
+      11.72
+    ],
+    "danger_level": 26.05,
+    "recorded_highest_level": 27.18,
+    "station_name": "Kurigram",
+    "river": "Dharla"
+  },
+  "SW291.5R": {
+    "monthly_profile": [
+      20.86,
+      18.25,
+      23.47,
+      28.68,
+      36.5,
+      44.33,
+      49.54,
+      47.98,
+      41.72,
+      31.29,
+      26.07,
+      23.47
+    ],
+    "danger_level": 52.15,
+    "recorded_highest_level": 52.9,
+    "station_name": "Dalia",
+    "river": "Teesta"
+  },
+  "SW294": {
+    "monthly_profile": [
+      11.72,
+      10.25,
+      13.19,
+      16.12,
+      20.51,
+      24.91,
+      27.84,
+      26.96,
+      23.44,
+      17.58,
+      14.65,
+      13.19
+    ],
+    "danger_level": 29.3,
+    "recorded_highest_level": 30.42,
+    "station_name": "Kaunia",
+    "river": "Teesta"
+  },
+  "SW295.5": {
+    "monthly_profile": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "danger_level": 0.0,
+    "recorded_highest_level": 0.0,
+    "station_name": "Tarapur",
+    "river": "Teesta"
+  },
+  "SW294.5": {
+    "monthly_profile": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "danger_level": 0.0,
+    "recorded_highest_level": 0.0,
+    "station_name": "Haripur",
+    "river": "Teesta"
+  },
+  "SW97": {
+    "monthly_profile": [
+      8.5,
+      7.44,
+      9.56,
+      11.69,
+      14.87,
+      18.06,
+      20.19,
+      19.55,
+      17.0,
+      12.75,
+      10.62,
+      9.56
+    ],
+    "danger_level": 21.25,
+    "recorded_highest_level": 22.06,
+    "station_name": "Gaibandha",
+    "river": "Ghagot"
+  },
+  "SW327": {
+    "monthly_profile": [
+      9.56,
+      8.36,
+      10.75,
+      13.14,
+      16.73,
+      20.31,
+      22.7,
+      21.99,
+      19.12,
+      14.34,
+      11.95,
+      10.75
+    ],
+    "danger_level": 23.9,
+    "recorded_highest_level": 0.0,
+    "station_name": "Boalmari",
+    "river": "Nil Jinjiram"
+  },
+  "SW223": {
+    "monthly_profile": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "danger_level": 0.0,
+    "recorded_highest_level": 0.0,
+    "station_name": "Goalkanda",
+    "river": "Nil-Jinjiram"
+  },
+  "SW62": {
+    "monthly_profile": [
+      12.68,
+      11.09,
+      14.27,
+      17.44,
+      22.19,
+      26.95,
+      30.11,
+      29.16,
+      25.36,
+      19.02,
+      15.85,
+      14.27
+    ],
+    "danger_level": 31.7,
+    "recorded_highest_level": 33.1,
+    "station_name": "Badarganj",
+    "river": "Jamuneswari"
+  },
+  "SW63": {
+    "monthly_profile": [
+      7.88,
+      6.89,
+      8.87,
+      10.84,
+      13.79,
+      16.74,
+      18.71,
+      18.12,
+      15.76,
+      11.82,
+      9.85,
+      8.87
+    ],
+    "danger_level": 19.7,
+    "recorded_highest_level": 20.95,
+    "station_name": "Chakrahimpur",
+    "river": "Karatoa"
+  },
+  "SW65": {
+    "monthly_profile": [
+      6.34,
+      5.55,
+      7.13,
+      8.72,
+      11.09,
+      13.47,
+      15.06,
+      14.58,
+      12.68,
+      9.51,
+      7.92,
+      7.13
+    ],
+    "danger_level": 15.85,
+    "recorded_highest_level": 16.61,
+    "station_name": "Bogura",
+    "river": "Karatoa"
+  },
+  "SW10": {
+    "monthly_profile": [
+      7.1,
+      6.21,
+      7.99,
+      9.76,
+      12.42,
+      15.09,
+      16.86,
+      16.33,
+      14.2,
+      10.65,
+      8.88,
+      7.99
+    ],
+    "danger_level": 17.75,
+    "recorded_highest_level": 18.37,
+    "station_name": "Shimulbari",
+    "river": "Bangali"
+  },
+  "SW45": {
+    "monthly_profile": [
+      10.42,
+      9.12,
+      11.72,
+      14.33,
+      18.23,
+      22.14,
+      24.75,
+      23.97,
+      20.84,
+      15.63,
+      13.03,
+      11.72
+    ],
+    "danger_level": 26.05,
+    "recorded_highest_level": 27.63,
+    "station_name": "Noonkhawa",
+    "river": "Brahmaputra"
+  },
+  "SW45A": {
+    "monthly_profile": [
+      9.76,
+      8.54,
+      10.98,
+      13.42,
+      17.08,
+      20.74,
+      23.18,
+      22.45,
+      19.52,
+      14.64,
+      12.2,
+      10.98
+    ],
+    "danger_level": 24.4,
+    "recorded_highest_level": 25.61,
+    "station_name": "Hatia",
+    "river": "Brahmaputra"
+  },
+  "SW45.5": {
+    "monthly_profile": [
+      9.3,
+      8.14,
+      10.46,
+      12.79,
+      16.27,
+      19.76,
+      22.09,
+      21.39,
+      18.6,
+      13.95,
+      11.62,
+      10.46
+    ],
+    "danger_level": 23.25,
+    "recorded_highest_level": 24.37,
+    "station_name": "Chilmari",
+    "river": "Brahmaputra"
+  },
+  "SW46": {
+    "monthly_profile": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "danger_level": 0.0,
+    "recorded_highest_level": 0.0,
+    "station_name": "Kamarjani",
+    "river": "Brahmaputra"
+  },
+  "SW44.5": {
+    "monthly_profile": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "danger_level": 0.0,
+    "recorded_highest_level": 0.0,
+    "station_name": "Char-Rajibpur",
+    "river": "Brahmaputra"
+  },
+  "SW46.9R": {
+    "monthly_profile": [
+      7.74,
+      6.77,
+      8.71,
+      10.64,
+      13.54,
+      16.45,
+      18.38,
+      17.8,
+      15.48,
+      11.61,
+      9.68,
+      8.71
+    ],
+    "danger_level": 19.35,
+    "recorded_highest_level": 20.69,
+    "station_name": "Fulchari",
+    "river": "Jamuna"
+  },
+  "SW46.9L": {
+    "monthly_profile": [
+      7.62,
+      6.67,
+      8.57,
+      10.48,
+      13.33,
+      16.19,
+      18.1,
+      17.53,
+      15.24,
+      11.43,
+      9.53,
+      8.57
+    ],
+    "danger_level": 19.05,
+    "recorded_highest_level": 20.63,
+    "station_name": "Bahadurabad",
+    "river": "Jamuna"
+  },
+  "SW46.5": {
+    "monthly_profile": [
+      7.4,
+      6.47,
+      8.33,
+      10.18,
+      12.95,
+      15.72,
+      17.57,
+      17.02,
+      14.8,
+      11.1,
+      9.25,
+      8.33
+    ],
+    "danger_level": 18.5,
+    "recorded_highest_level": 21.2,
+    "station_name": "Saghata",
+    "river": "Jamuna"
+  },
+  "SW15J": {
+    "monthly_profile": [
+      6.5,
+      5.69,
+      7.31,
+      8.94,
+      11.38,
+      13.81,
+      15.44,
+      14.95,
+      13.0,
+      9.75,
+      8.12,
+      7.31
+    ],
+    "danger_level": 16.25,
+    "recorded_highest_level": 18.59,
+    "station_name": "Sariakandi",
+    "river": "Jamuna"
+  },
+  "SW49A": {
+    "monthly_profile": [
+      5.92,
+      5.18,
+      6.66,
+      8.14,
+      10.36,
+      12.58,
+      14.06,
+      13.62,
+      11.84,
+      8.88,
+      7.4,
+      6.66
+    ],
+    "danger_level": 14.8,
+    "recorded_highest_level": 16.59,
+    "station_name": "Kazipur",
+    "river": "Jamuna"
+  },
+  "SW48": {
+    "monthly_profile": [
+      5.42,
+      4.74,
+      6.1,
+      7.45,
+      9.48,
+      11.52,
+      12.87,
+      12.47,
+      10.84,
+      8.13,
+      6.78,
+      6.1
+    ],
+    "danger_level": 13.55,
+    "recorded_highest_level": 0.0,
+    "station_name": "Jagannathganj",
+    "river": "Jamuna"
+  },
+  "SW49": {
+    "monthly_profile": [
+      5.16,
+      4.51,
+      5.81,
+      7.1,
+      9.03,
+      10.96,
+      12.25,
+      11.87,
+      10.32,
+      7.74,
+      6.45,
+      5.81
+    ],
+    "danger_level": 12.9,
+    "recorded_highest_level": 14.7,
+    "station_name": "Serajganj",
+    "river": "Jamuna"
+  },
+  "SW50": {
+    "monthly_profile": [
+      4.72,
+      4.13,
+      5.31,
+      6.49,
+      8.26,
+      10.03,
+      11.21,
+      10.86,
+      9.44,
+      7.08,
+      5.9,
+      5.31
+    ],
+    "danger_level": 11.8,
+    "recorded_highest_level": 18.55,
+    "station_name": "Porabari",
+    "river": "Jamuna"
+  },
+  "SW50.3": {
+    "monthly_profile": [
+      3.84,
+      3.36,
+      4.32,
+      5.28,
+      6.72,
+      8.16,
+      9.12,
+      8.83,
+      7.68,
+      5.76,
+      4.8,
+      4.32
+    ],
+    "danger_level": 9.6,
+    "recorded_highest_level": 11.08,
+    "station_name": "Mathura",
+    "river": "Jamuna"
+  },
+  "SW50.6": {
+    "monthly_profile": [
+      3.58,
+      3.13,
+      4.03,
+      4.92,
+      6.26,
+      7.61,
+      8.5,
+      8.23,
+      7.16,
+      5.37,
+      4.47,
+      4.03
+    ],
+    "danger_level": 8.95,
+    "recorded_highest_level": 9.9,
+    "station_name": "Aricha",
+    "river": "Jamuna"
+  },
+  "SW132.2": {
+    "monthly_profile": [
+      11.8,
+      10.32,
+      13.28,
+      16.23,
+      20.65,
+      25.07,
+      28.02,
+      27.14,
+      23.6,
+      17.7,
+      14.75,
+      13.28
+    ],
+    "danger_level": 29.5,
+    "recorded_highest_level": 30.01,
+    "station_name": "Phulbari",
+    "river": "Ichamati-Jamuna"
+  },
+  "SW133": {
+    "monthly_profile": [
+      5.92,
+      5.18,
+      6.66,
+      8.14,
+      10.36,
+      12.58,
+      14.06,
+      13.62,
+      11.84,
+      8.88,
+      7.4,
+      6.66
+    ],
+    "danger_level": 14.8,
+    "recorded_highest_level": 15.73,
+    "station_name": "Naogaon",
+    "river": "Little Jamuna"
+  },
+  "SW140": {
+    "monthly_profile": [
+      28.12,
+      24.6,
+      31.63,
+      38.66,
+      49.21,
+      59.75,
+      66.78,
+      64.68,
+      56.24,
+      42.18,
+      35.15,
+      31.63
+    ],
+    "danger_level": 70.3,
+    "recorded_highest_level": 72.03,
+    "station_name": "Panchagarh",
+    "river": "Upper Karatoa"
+  },
+  "SW142.5": {
+    "monthly_profile": [
+      15.66,
+      13.7,
+      17.62,
+      21.53,
+      27.4,
+      33.28,
+      37.19,
+      36.02,
+      31.32,
+      23.49,
+      19.57,
+      17.62
+    ],
+    "danger_level": 39.15,
+    "recorded_highest_level": 39.43,
+    "station_name": "Bhusirbandar",
+    "river": "Upper Atrai"
+  },
+  "SW145": {
+    "monthly_profile": [
+      7.26,
+      6.35,
+      8.17,
+      9.98,
+      12.7,
+      15.43,
+      17.24,
+      16.7,
+      14.52,
+      10.89,
+      9.07,
+      8.17
+    ],
+    "danger_level": 18.15,
+    "recorded_highest_level": 19.4,
+    "station_name": "Mohadebpur",
+    "river": "Atrai"
+  },
+  "SW147": {
+    "monthly_profile": [
+      5.3,
+      4.64,
+      5.96,
+      7.29,
+      9.27,
+      11.26,
+      12.59,
+      12.19,
+      10.6,
+      7.95,
+      6.62,
+      5.96
+    ],
+    "danger_level": 13.25,
+    "recorded_highest_level": 13.94,
+    "station_name": "Atrai",
+    "river": "Atrai"
+  },
+  "SW147.5": {
+    "monthly_profile": [
+      4.88,
+      4.27,
+      5.49,
+      6.71,
+      8.54,
+      10.37,
+      11.59,
+      11.22,
+      9.76,
+      7.32,
+      6.1,
+      5.49
+    ],
+    "danger_level": 12.2,
+    "recorded_highest_level": 12.84,
+    "station_name": "Singra",
+    "river": "Atrai Gur"
+  },
+  "SW151": {
+    "monthly_profile": [
+      3.98,
+      3.48,
+      4.48,
+      5.47,
+      6.96,
+      8.46,
+      9.45,
+      9.15,
+      7.96,
+      5.97,
+      4.97,
+      4.48
+    ],
+    "danger_level": 9.95,
+    "recorded_highest_level": 11.8,
+    "station_name": "Baghabari",
+    "river": "Atrai"
+  },
+  "SW68A": {
+    "monthly_profile": [
+      4.38,
+      3.83,
+      4.93,
+      6.02,
+      7.66,
+      9.31,
+      10.4,
+      10.07,
+      8.76,
+      6.57,
+      5.47,
+      4.93
+    ],
+    "danger_level": 10.95,
+    "recorded_highest_level": 12.34,
+    "station_name": "Elasinghat",
+    "river": "Dhaleswari"
+  },
+  "SW225": {
+    "monthly_profile": [
+      6.62,
+      5.79,
+      7.45,
+      9.1,
+      11.58,
+      14.07,
+      15.72,
+      15.23,
+      13.24,
+      9.93,
+      8.28,
+      7.45
+    ],
+    "danger_level": 16.55,
+    "recorded_highest_level": 17.2,
+    "station_name": "Jamalpur",
+    "river": "Old Brahmaputra"
+  },
+  "SW228.5": {
+    "monthly_profile": [
+      4.82,
+      4.22,
+      5.42,
+      6.63,
+      8.44,
+      10.24,
+      11.45,
+      11.09,
+      9.64,
+      7.23,
+      6.03,
+      5.42
+    ],
+    "danger_level": 12.05,
+    "recorded_highest_level": 12.73,
+    "station_name": "Mymensingh",
+    "river": "Old Brahmaputra"
+  },
+  "SW177": {
+    "monthly_profile": [
+      2.14,
+      1.87,
+      2.41,
+      2.94,
+      3.74,
+      4.55,
+      5.08,
+      4.92,
+      4.28,
+      3.21,
+      2.67,
+      2.41
+    ],
+    "danger_level": 5.35,
+    "recorded_highest_level": 6.84,
+    "station_name": "Lakhpur",
+    "river": "Lakhya"
+  },
+  "SW42": {
+    "monthly_profile": [
+      2.22,
+      1.94,
+      2.5,
+      3.05,
+      3.88,
+      4.72,
+      5.27,
+      5.11,
+      4.44,
+      3.33,
+      2.77,
+      2.5
+    ],
+    "danger_level": 5.55,
+    "recorded_highest_level": 6.69,
+    "station_name": "Dhaka",
+    "river": "Buriganga"
+  },
+  "SW43": {
+    "monthly_profile": [
+      2.14,
+      1.87,
+      2.41,
+      2.94,
+      3.74,
+      4.55,
+      5.08,
+      4.92,
+      4.28,
+      3.21,
+      2.67,
+      2.41
+    ],
+    "danger_level": 5.35,
+    "recorded_highest_level": 8.16,
+    "station_name": "Hariharpara",
+    "river": "Buriganga"
+  },
+  "SW7.5": {
+    "monthly_profile": [
+      2.12,
+      1.85,
+      2.38,
+      2.92,
+      3.71,
+      4.5,
+      5.03,
+      4.88,
+      4.24,
+      3.18,
+      2.65,
+      2.38
+    ],
+    "danger_level": 5.3,
+    "recorded_highest_level": 5.9,
+    "station_name": "Demra",
+    "river": "Balu"
+  },
+  "SW180": {
+    "monthly_profile": [
+      2.02,
+      1.77,
+      2.27,
+      2.78,
+      3.53,
+      4.29,
+      4.8,
+      4.65,
+      4.04,
+      3.03,
+      2.52,
+      2.27
+    ],
+    "danger_level": 5.05,
+    "recorded_highest_level": 5.62,
+    "station_name": "Narayanganj",
+    "river": "Lakhya"
+  },
+  "SW301": {
+    "monthly_profile": [
+      3.18,
+      2.78,
+      3.58,
+      4.37,
+      5.56,
+      6.76,
+      7.55,
+      7.31,
+      6.36,
+      4.77,
+      3.98,
+      3.58
+    ],
+    "danger_level": 7.95,
+    "recorded_highest_level": 9.29,
+    "station_name": "Kaliakoir",
+    "river": "Turag"
+  },
+  "SW302": {
+    "monthly_profile": [
+      2.2,
+      1.92,
+      2.48,
+      3.03,
+      3.85,
+      4.67,
+      5.22,
+      5.06,
+      4.4,
+      3.3,
+      2.75,
+      2.48
+    ],
+    "danger_level": 5.5,
+    "recorded_highest_level": 7.22,
+    "station_name": "Mirpur",
+    "river": "Turag"
+  },
+  "SW299": {
+    "monthly_profile": [
+      2.26,
+      1.98,
+      2.54,
+      3.11,
+      3.96,
+      4.8,
+      5.37,
+      5.2,
+      4.52,
+      3.39,
+      2.83,
+      2.54
+    ],
+    "danger_level": 5.65,
+    "recorded_highest_level": 6.68,
+    "station_name": "Tongi",
+    "river": "Tongi Khal"
+  },
+  "SW137A": {
+    "monthly_profile": [
+      3.18,
+      2.78,
+      3.58,
+      4.37,
+      5.56,
+      6.76,
+      7.55,
+      7.31,
+      6.36,
+      4.77,
+      3.98,
+      3.58
+    ],
+    "danger_level": 7.95,
+    "recorded_highest_level": 9.62,
+    "station_name": "Taraghat",
+    "river": "Kaliganga"
+  },
+  "SW68.5": {
+    "monthly_profile": [
+      3.12,
+      2.73,
+      3.51,
+      4.29,
+      5.46,
+      6.63,
+      7.41,
+      7.18,
+      6.24,
+      4.68,
+      3.9,
+      3.51
+    ],
+    "danger_level": 7.8,
+    "recorded_highest_level": 9.15,
+    "station_name": "Jagir",
+    "river": "Old Dhaleswari"
+  },
+  "SW71A": {
+    "monthly_profile": [
+      1.9,
+      1.66,
+      2.14,
+      2.61,
+      3.32,
+      4.04,
+      4.51,
+      4.37,
+      3.8,
+      2.85,
+      2.38,
+      2.14
+    ],
+    "danger_level": 4.75,
+    "recorded_highest_level": 5.92,
+    "station_name": "Rekabi-Bazar",
+    "river": "Dhaleswari"
+  },
+  "SW14.5": {
+    "monthly_profile": [
+      2.74,
+      2.4,
+      3.08,
+      3.77,
+      4.79,
+      5.82,
+      6.51,
+      6.3,
+      5.48,
+      4.11,
+      3.42,
+      3.08
+    ],
+    "danger_level": 6.85,
+    "recorded_highest_level": 9.18,
+    "station_name": "Nayarhat",
+    "river": "Bangshi"
+  },
+  "SW236": {
+    "monthly_profile": [
+      13.22,
+      11.57,
+      14.87,
+      18.18,
+      23.13,
+      28.09,
+      31.4,
+      30.41,
+      26.44,
+      19.83,
+      16.52,
+      14.87
+    ],
+    "danger_level": 33.05,
+    "recorded_highest_level": 34.36,
+    "station_name": "Dinajpur",
+    "river": "Punarbhaba"
+  },
+  "SW285": {
+    "monthly_profile": [
+      19.98,
+      17.48,
+      22.48,
+      27.47,
+      34.96,
+      42.46,
+      47.45,
+      45.95,
+      39.96,
+      29.97,
+      24.98,
+      22.48
+    ],
+    "danger_level": 49.95,
+    "recorded_highest_level": 50.87,
+    "station_name": "Thakurgaon",
+    "river": "Tangon"
+  },
+  "SW238": {
+    "monthly_profile": [
+      8.62,
+      7.54,
+      9.7,
+      11.85,
+      15.08,
+      18.32,
+      20.47,
+      19.83,
+      17.24,
+      12.93,
+      10.78,
+      9.7
+    ],
+    "danger_level": 21.55,
+    "recorded_highest_level": 23.65,
+    "station_name": "Rohanpur",
+    "river": "Punarvaba"
+  },
+  "SW211.5": {
+    "monthly_profile": [
+      8.22,
+      7.19,
+      9.25,
+      11.3,
+      14.38,
+      17.47,
+      19.52,
+      18.91,
+      16.44,
+      12.33,
+      10.28,
+      9.25
+    ],
+    "danger_level": 20.55,
+    "recorded_highest_level": 22.39,
+    "station_name": "Chapai-Nawabganj",
+    "river": "Mohananda"
+  },
+  "SW88A": {
+    "monthly_profile": [
+      8.82,
+      7.72,
+      9.92,
+      12.13,
+      15.43,
+      18.74,
+      20.95,
+      20.29,
+      17.64,
+      13.23,
+      11.03,
+      9.92
+    ],
+    "danger_level": 22.05,
+    "recorded_highest_level": 23.67,
+    "station_name": "Pankha",
+    "river": "Ganges"
+  },
+  "SW88": {
+    "monthly_profile": [
+      7.22,
+      6.32,
+      8.12,
+      9.93,
+      12.63,
+      15.34,
+      17.15,
+      16.61,
+      14.44,
+      10.83,
+      9.03,
+      8.12
+    ],
+    "danger_level": 18.05,
+    "recorded_highest_level": 19.47,
+    "station_name": "Rajshahi",
+    "river": "Ganges"
+  },
+  "SW90": {
+    "monthly_profile": [
+      5.52,
+      4.83,
+      6.21,
+      7.59,
+      9.66,
+      11.73,
+      13.11,
+      12.7,
+      11.04,
+      8.28,
+      6.9,
+      6.21
+    ],
+    "danger_level": 13.8,
+    "recorded_highest_level": 14.33,
+    "station_name": "Hardinge-RB",
+    "river": "Ganges"
+  },
+  "SW91": {
+    "monthly_profile": [
+      5.22,
+      4.57,
+      5.87,
+      7.18,
+      9.13,
+      11.09,
+      12.4,
+      12.01,
+      10.44,
+      7.83,
+      6.53,
+      5.87
+    ],
+    "danger_level": 13.05,
+    "recorded_highest_level": 14.1,
+    "station_name": "Talbaria",
+    "river": "Ganges"
+  },
+  "SW91.9R": {
+    "monthly_profile": [
+      3.28,
+      2.87,
+      3.69,
+      4.51,
+      5.74,
+      6.97,
+      7.79,
+      7.54,
+      6.56,
+      4.92,
+      4.1,
+      3.69
+    ],
+    "danger_level": 8.2,
+    "recorded_highest_level": 9.45,
+    "station_name": "Goalondo",
+    "river": "Padma"
+  },
+  "SW93.4": {
+    "monthly_profile": [
+      2.34,
+      2.05,
+      2.63,
+      3.22,
+      4.09,
+      4.97,
+      5.56,
+      5.38,
+      4.68,
+      3.51,
+      2.92,
+      2.63
+    ],
+    "danger_level": 5.85,
+    "recorded_highest_level": 6.76,
+    "station_name": "Bhagyakul",
+    "river": "Padma"
+  },
+  "SW93.5": {
+    "monthly_profile": [
+      2.26,
+      1.98,
+      2.54,
+      3.11,
+      3.96,
+      4.8,
+      5.37,
+      5.2,
+      4.52,
+      3.39,
+      2.83,
+      2.54
+    ],
+    "danger_level": 5.65,
+    "recorded_highest_level": 6.41,
+    "station_name": "Mawa",
+    "river": "Padma"
+  },
+  "SW95": {
+    "monthly_profile": [
+      1.6,
+      1.4,
+      1.8,
+      2.2,
+      2.8,
+      3.4,
+      3.8,
+      3.68,
+      3.2,
+      2.4,
+      2.0,
+      1.8
+    ],
+    "danger_level": 4.0,
+    "recorded_highest_level": 4.92,
+    "station_name": "Sureshswar",
+    "river": "Padma"
+  },
+  "SW99": {
+    "monthly_profile": [
+      4.92,
+      4.3,
+      5.54,
+      6.77,
+      8.61,
+      10.46,
+      11.69,
+      11.32,
+      9.84,
+      7.38,
+      6.15,
+      5.54
+    ],
+    "danger_level": 12.3,
+    "recorded_highest_level": 12.91,
+    "station_name": "Gorai-RB",
+    "river": "Gorai"
+  },
+  "SW101B": {
+    "monthly_profile": [
+      3.1,
+      2.71,
+      3.49,
+      4.26,
+      5.42,
+      6.59,
+      7.36,
+      7.13,
+      6.2,
+      4.65,
+      3.88,
+      3.49
+    ],
+    "danger_level": 7.75,
+    "recorded_highest_level": 8.61,
+    "station_name": "Kamarkhali",
+    "river": "Gorai"
+  },
+  "SW128": {
+    "monthly_profile": [
+      1.4,
+      1.22,
+      1.57,
+      1.93,
+      2.45,
+      2.98,
+      3.32,
+      3.22,
+      2.8,
+      2.1,
+      1.75,
+      1.57
+    ],
+    "danger_level": 3.5,
+    "recorded_highest_level": 3.98,
+    "station_name": "Sakra",
+    "river": "Ichamati"
+  },
+  "SW207": {
+    "monthly_profile": [
+      4.64,
+      4.06,
+      5.22,
+      6.38,
+      8.12,
+      9.86,
+      11.02,
+      10.67,
+      9.28,
+      6.96,
+      5.8,
+      5.22
+    ],
+    "danger_level": 11.6,
+    "recorded_highest_level": 11.84,
+    "station_name": "Chuadanga",
+    "river": "Mathabhanga"
+  },
+  "SW206": {
+    "monthly_profile": [
+      5.62,
+      4.92,
+      6.32,
+      7.73,
+      9.83,
+      11.94,
+      13.35,
+      12.93,
+      11.24,
+      8.43,
+      7.03,
+      6.32
+    ],
+    "danger_level": 14.05,
+    "recorded_highest_level": 14.67,
+    "station_name": "Hatboalia",
+    "river": "Mathabhanga"
+  },
+  "SW162": {
+    "monthly_profile": [
+      1.86,
+      1.63,
+      2.09,
+      2.56,
+      3.25,
+      3.95,
+      4.42,
+      4.28,
+      3.72,
+      2.79,
+      2.33,
+      2.09
+    ],
+    "danger_level": 4.65,
+    "recorded_highest_level": 4.94,
+    "station_name": "Jhikargacha",
+    "river": "Kobadak"
+  },
+  "SW23": {
+    "monthly_profile": [
+      1.34,
+      1.17,
+      1.51,
+      1.84,
+      2.34,
+      2.85,
+      3.18,
+      3.08,
+      2.68,
+      2.01,
+      1.68,
+      1.51
+    ],
+    "danger_level": 3.35,
+    "recorded_highest_level": 4.74,
+    "station_name": "Kalaroa",
+    "river": "Betna"
+  },
+  "SW168": {
+    "monthly_profile": [
+      2.82,
+      2.47,
+      3.17,
+      3.88,
+      4.93,
+      5.99,
+      6.7,
+      6.49,
+      5.64,
+      4.23,
+      3.52,
+      3.17
+    ],
+    "danger_level": 7.05,
+    "recorded_highest_level": 8.7,
+    "station_name": "Faridpur",
+    "river": "Kumar"
+  },
+  "SW5": {
+    "monthly_profile": [
+      1.5,
+      1.31,
+      1.69,
+      2.06,
+      2.62,
+      3.19,
+      3.56,
+      3.45,
+      3.0,
+      2.25,
+      1.88,
+      1.69
+    ],
+    "danger_level": 3.75,
+    "recorded_highest_level": 5.37,
+    "station_name": "Madaripur",
+    "river": "Arialkhan"
+  },
+  "SW198": {
+    "monthly_profile": [
+      1.34,
+      1.17,
+      1.51,
+      1.84,
+      2.34,
+      2.85,
+      3.18,
+      3.08,
+      2.68,
+      2.01,
+      1.68,
+      1.51
+    ],
+    "danger_level": 3.35,
+    "recorded_highest_level": 4.02,
+    "station_name": "Haridaspur",
+    "river": "Madaripur Beel Route"
+  },
+  "SW18": {
+    "monthly_profile": [
+      0.84,
+      0.73,
+      0.95,
+      1.16,
+      1.47,
+      1.78,
+      1.99,
+      1.93,
+      1.68,
+      1.26,
+      1.05,
+      0.95
+    ],
+    "danger_level": 2.1,
+    "recorded_highest_level": 2.79,
+    "station_name": "Barishal",
+    "river": "Kirtonkhola"
+  },
+  "SW241": {
+    "monthly_profile": [
+      1.04,
+      0.91,
+      1.17,
+      1.43,
+      1.82,
+      2.21,
+      2.47,
+      2.39,
+      2.08,
+      1.56,
+      1.3,
+      1.17
+    ],
+    "danger_level": 2.6,
+    "recorded_highest_level": 3.49,
+    "station_name": "Khulna",
+    "river": "Rupsa"
+  },
+  "SW244": {
+    "monthly_profile": [
+      0.72,
+      0.63,
+      0.81,
+      0.99,
+      1.26,
+      1.53,
+      1.71,
+      1.66,
+      1.44,
+      1.08,
+      0.9,
+      0.81
+    ],
+    "danger_level": 1.8,
+    "recorded_highest_level": 3.33,
+    "station_name": "Mongla",
+    "river": "Pashure"
+  },
+  "SW326": {
+    "monthly_profile": [
+      5.2,
+      4.55,
+      5.85,
+      7.15,
+      9.1,
+      11.05,
+      12.35,
+      11.96,
+      10.4,
+      7.8,
+      6.5,
+      5.85
+    ],
+    "danger_level": 13.0,
+    "recorded_highest_level": 0.0,
+    "station_name": "Lubachara",
+    "river": "Lubachara"
+  },
+  "SW266": {
+    "monthly_profile": [
+      5.1,
+      4.46,
+      5.74,
+      7.01,
+      8.92,
+      10.84,
+      12.11,
+      11.73,
+      10.2,
+      7.65,
+      6.38,
+      5.74
+    ],
+    "danger_level": 12.75,
+    "recorded_highest_level": 14.63,
+    "station_name": "Kanaighat",
+    "river": "Surma"
+  },
+  "SW267": {
+    "monthly_profile": [
+      4.32,
+      3.78,
+      4.86,
+      5.94,
+      7.56,
+      9.18,
+      10.26,
+      9.94,
+      8.64,
+      6.48,
+      5.4,
+      4.86
+    ],
+    "danger_level": 10.8,
+    "recorded_highest_level": 11.69,
+    "station_name": "Sylhet",
+    "river": "Surma"
+  },
+  "SW269": {
+    "monthly_profile": [
+      3.12,
+      2.73,
+      3.51,
+      4.29,
+      5.46,
+      6.63,
+      7.41,
+      7.18,
+      6.24,
+      4.68,
+      3.9,
+      3.51
+    ],
+    "danger_level": 7.8,
+    "recorded_highest_level": 9.0,
+    "station_name": "Sunamganj",
+    "river": "Surma"
+  },
+  "SW268": {
+    "monthly_profile": [
+      3.48,
+      3.04,
+      3.91,
+      4.79,
+      6.09,
+      7.39,
+      8.26,
+      8.0,
+      6.96,
+      5.22,
+      4.35,
+      3.91
+    ],
+    "danger_level": 8.7,
+    "recorded_highest_level": 0.0,
+    "station_name": "Chhatak",
+    "river": "Surma-Meghna"
+  },
+  "SW172": {
+    "monthly_profile": [
+      6.16,
+      5.39,
+      6.93,
+      8.47,
+      10.78,
+      13.09,
+      14.63,
+      14.17,
+      12.32,
+      9.24,
+      7.7,
+      6.93
+    ],
+    "danger_level": 15.4,
+    "recorded_highest_level": 17.57,
+    "station_name": "Amalshid",
+    "river": "Kushiyara"
+  },
+  "SW173": {
+    "monthly_profile": [
+      5.22,
+      4.57,
+      5.87,
+      7.18,
+      9.13,
+      11.09,
+      12.4,
+      12.01,
+      10.44,
+      7.83,
+      6.53,
+      5.87
+    ],
+    "danger_level": 13.05,
+    "recorded_highest_level": 13.72,
+    "station_name": "Sheola",
+    "river": "Kushiyara"
+  },
+  "SW174": {
+    "monthly_profile": [
+      4.18,
+      3.66,
+      4.7,
+      5.75,
+      7.31,
+      8.88,
+      9.93,
+      9.61,
+      8.36,
+      6.27,
+      5.22,
+      4.7
+    ],
+    "danger_level": 10.45,
+    "recorded_highest_level": 0.0,
+    "station_name": "Fenchuganj",
+    "river": "Kushiyara"
+  },
+  "SW175.5": {
+    "monthly_profile": [
+      3.42,
+      2.99,
+      3.85,
+      4.7,
+      5.99,
+      7.27,
+      8.12,
+      7.87,
+      6.84,
+      5.13,
+      4.28,
+      3.85
+    ],
+    "danger_level": 8.55,
+    "recorded_highest_level": 8.79,
+    "station_name": "Sherpur-Sylhet",
+    "river": "Kushiyara"
+  },
+  "SW270": {
+    "monthly_profile": [
+      2.82,
+      2.47,
+      3.17,
+      3.88,
+      4.93,
+      5.99,
+      6.7,
+      6.49,
+      5.64,
+      4.23,
+      3.52,
+      3.17
+    ],
+    "danger_level": 7.05,
+    "recorded_highest_level": 7.48,
+    "station_name": "Markuli",
+    "river": "Surma-Meghna"
+  },
+  "SW251": {
+    "monthly_profile": [
+      4.94,
+      4.32,
+      5.56,
+      6.79,
+      8.64,
+      10.5,
+      11.73,
+      11.36,
+      9.88,
+      7.41,
+      6.17,
+      5.56
+    ],
+    "danger_level": 12.35,
+    "recorded_highest_level": 13.53,
+    "station_name": "Sarighat",
+    "river": "Sarigowain"
+  },
+  "SW201": {
+    "monthly_profile": [
+      7.02,
+      6.14,
+      7.9,
+      9.65,
+      12.29,
+      14.92,
+      16.67,
+      16.15,
+      14.04,
+      10.53,
+      8.78,
+      7.9
+    ],
+    "danger_level": 17.55,
+    "recorded_highest_level": 19.17,
+    "station_name": "Manu-RB",
+    "river": "Manu"
+  },
+  "SW202": {
+    "monthly_profile": [
+      4.52,
+      3.96,
+      5.09,
+      6.22,
+      7.91,
+      9.61,
+      10.73,
+      10.4,
+      9.04,
+      6.78,
+      5.65,
+      5.09
+    ],
+    "danger_level": 11.3,
+    "recorded_highest_level": 12.49,
+    "station_name": "Moulvibazar",
+    "river": "Manu"
+  },
+  "SW67": {
+    "monthly_profile": [
+      7.74,
+      6.77,
+      8.71,
+      10.64,
+      13.54,
+      16.45,
+      18.38,
+      17.8,
+      15.48,
+      11.61,
+      9.68,
+      8.71
+    ],
+    "danger_level": 19.35,
+    "recorded_highest_level": 20.27,
+    "station_name": "Kamalganj",
+    "river": "Dhalai"
+  },
+  "SW157": {
+    "monthly_profile": [
+      8.48,
+      7.42,
+      9.54,
+      11.66,
+      14.84,
+      18.02,
+      20.14,
+      19.5,
+      16.96,
+      12.72,
+      10.6,
+      9.54
+    ],
+    "danger_level": 21.2,
+    "recorded_highest_level": 25.74,
+    "station_name": "Ballah",
+    "river": "Khowai"
+  },
+  "SW159": {
+    "monthly_profile": [
+      3.62,
+      3.17,
+      4.07,
+      4.98,
+      6.33,
+      7.69,
+      8.6,
+      8.33,
+      7.24,
+      5.43,
+      4.53,
+      4.07
+    ],
+    "danger_level": 9.05,
+    "recorded_highest_level": 11.0,
+    "station_name": "Habiganj",
+    "river": "Khowai"
+  },
+  "SW269.5": {
+    "monthly_profile": [
+      2.62,
+      2.29,
+      2.95,
+      3.6,
+      4.58,
+      5.57,
+      6.22,
+      6.03,
+      5.24,
+      3.93,
+      3.27,
+      2.95
+    ],
+    "danger_level": 6.55,
+    "recorded_highest_level": 8.29,
+    "station_name": "Derai",
+    "river": "Surma Old Course"
+  },
+  "SW72": {
+    "monthly_profile": [
+      2.62,
+      2.29,
+      2.95,
+      3.6,
+      4.58,
+      5.57,
+      6.22,
+      6.03,
+      5.24,
+      3.93,
+      3.27,
+      2.95
+    ],
+    "danger_level": 6.55,
+    "recorded_highest_level": 8.96,
+    "station_name": "Khaliajuri",
+    "river": "Dhanu"
+  },
+  "SW333": {
+    "monthly_profile": [
+      3.1,
+      2.71,
+      3.49,
+      4.26,
+      5.42,
+      6.59,
+      7.36,
+      7.13,
+      6.2,
+      4.65,
+      3.88,
+      3.49
+    ],
+    "danger_level": 7.75,
+    "recorded_highest_level": 9.25,
+    "station_name": "Muslimpur",
+    "river": "Jhalukhali"
+  },
+  "SW131.5": {
+    "monthly_profile": [
+      3.22,
+      2.82,
+      3.62,
+      4.43,
+      5.63,
+      6.84,
+      7.65,
+      7.41,
+      6.44,
+      4.83,
+      4.03,
+      3.62
+    ],
+    "danger_level": 8.05,
+    "recorded_highest_level": 11.99,
+    "station_name": "Lorergorh",
+    "river": "Jadukata"
+  },
+  "SW262": {
+    "monthly_profile": [
+      5.28,
+      4.62,
+      5.94,
+      7.26,
+      9.24,
+      11.22,
+      12.54,
+      12.14,
+      10.56,
+      7.92,
+      6.6,
+      5.94
+    ],
+    "danger_level": 13.2,
+    "recorded_highest_level": 17.55,
+    "station_name": "Bijoypur",
+    "river": "Someswari"
+  },
+  "SW263": {
+    "monthly_profile": [
+      5.02,
+      4.39,
+      5.65,
+      6.9,
+      8.79,
+      10.67,
+      11.92,
+      11.55,
+      10.04,
+      7.53,
+      6.28,
+      5.65
+    ],
+    "danger_level": 12.55,
+    "recorded_highest_level": 14.98,
+    "station_name": "Durgapur",
+    "river": "Someswari"
+  },
+  "SW263.1": {
+    "monthly_profile": [
+      2.62,
+      2.29,
+      2.95,
+      3.6,
+      4.58,
+      5.57,
+      6.22,
+      6.03,
+      5.24,
+      3.93,
+      3.27,
+      2.95
+    ],
+    "danger_level": 6.55,
+    "recorded_highest_level": 12.6,
+    "station_name": "Kalmakanda",
+    "river": "Someswari"
+  },
+  "SW34": {
+    "monthly_profile": [
+      8.78,
+      7.68,
+      9.88,
+      12.07,
+      15.36,
+      18.66,
+      20.85,
+      20.19,
+      17.56,
+      13.17,
+      10.97,
+      9.88
+    ],
+    "danger_level": 21.95,
+    "recorded_highest_level": 25.0,
+    "station_name": "Nakuagaon",
+    "river": "Bhugai"
+  },
+  "SW36": {
+    "monthly_profile": [
+      4.22,
+      3.69,
+      4.75,
+      5.8,
+      7.38,
+      8.97,
+      10.02,
+      9.71,
+      8.44,
+      6.33,
+      5.28,
+      4.75
+    ],
+    "danger_level": 10.55,
+    "recorded_highest_level": 11.08,
+    "station_name": "Jariajanjail",
+    "river": "Kangsha"
+  },
+  "SW3A": {
+    "monthly_profile": [
+      2.02,
+      1.77,
+      2.27,
+      2.78,
+      3.53,
+      4.29,
+      4.8,
+      4.65,
+      4.04,
+      3.03,
+      2.52,
+      2.27
+    ],
+    "danger_level": 5.05,
+    "recorded_highest_level": 6.62,
+    "station_name": "B. Baria",
+    "river": "Titas"
+  },
+  "SW110": {
+    "monthly_profile": [
+      4.52,
+      3.96,
+      5.09,
+      6.22,
+      7.91,
+      9.61,
+      10.73,
+      10.4,
+      9.04,
+      6.78,
+      5.65,
+      5.09
+    ],
+    "danger_level": 11.3,
+    "recorded_highest_level": 12.57,
+    "station_name": "Cumilla",
+    "river": "Gumti"
+  },
+  "SW114": {
+    "monthly_profile": [
+      3.22,
+      2.82,
+      3.62,
+      4.43,
+      5.63,
+      6.84,
+      7.65,
+      7.41,
+      6.44,
+      4.83,
+      4.03,
+      3.62
+    ],
+    "danger_level": 8.05,
+    "recorded_highest_level": 9.36,
+    "station_name": "Debidwar",
+    "river": "Gumti"
+  },
+  "SW273": {
+    "monthly_profile": [
+      2.32,
+      2.03,
+      2.61,
+      3.19,
+      4.06,
+      4.93,
+      5.51,
+      5.34,
+      4.64,
+      3.48,
+      2.9,
+      2.61
+    ],
+    "danger_level": 5.8,
+    "recorded_highest_level": 6.69,
+    "station_name": "Bhairab Bazar",
+    "river": "Upper Meghna"
+  },
+  "SW274": {
+    "monthly_profile": [
+      2.1,
+      1.84,
+      2.36,
+      2.89,
+      3.67,
+      4.46,
+      4.99,
+      4.83,
+      4.2,
+      3.15,
+      2.62,
+      2.36
+    ],
+    "danger_level": 5.25,
+    "recorded_highest_level": 6.21,
+    "station_name": "Narsingdi",
+    "river": "Meghna"
+  },
+  "SW275": {
+    "monthly_profile": [
+      1.88,
+      1.65,
+      2.12,
+      2.59,
+      3.29,
+      4.0,
+      4.46,
+      4.32,
+      3.76,
+      2.82,
+      2.35,
+      2.12
+    ],
+    "danger_level": 4.7,
+    "recorded_highest_level": 7.39,
+    "station_name": "Bayderbazar",
+    "river": "Meghna"
+  },
+  "SW275.5": {
+    "monthly_profile": [
+      1.82,
+      1.59,
+      2.05,
+      2.5,
+      3.18,
+      3.87,
+      4.32,
+      4.19,
+      3.64,
+      2.73,
+      2.27,
+      2.05
+    ],
+    "danger_level": 4.55,
+    "recorded_highest_level": 7.1,
+    "station_name": "Meghna Bridge",
+    "river": "Meghna"
+  },
+  "SW277": {
+    "monthly_profile": [
+      1.42,
+      1.24,
+      1.6,
+      1.95,
+      2.48,
+      3.02,
+      3.37,
+      3.27,
+      2.84,
+      2.13,
+      1.77,
+      1.6
+    ],
+    "danger_level": 3.55,
+    "recorded_highest_level": 5.11,
+    "station_name": "Chandpur",
+    "river": "Lower Meghna"
+  },
+  "SW278": {
+    "monthly_profile": [
+      1.18,
+      1.03,
+      1.33,
+      1.62,
+      2.06,
+      2.51,
+      2.8,
+      2.71,
+      2.36,
+      1.77,
+      1.48,
+      1.33
+    ],
+    "danger_level": 2.95,
+    "recorded_highest_level": 4.03,
+    "station_name": "Daulatkhan",
+    "river": "Lower Meghna"
+  },
+  "SW212": {
+    "monthly_profile": [
+      5.02,
+      4.39,
+      5.65,
+      6.9,
+      8.79,
+      10.67,
+      11.92,
+      11.55,
+      10.04,
+      7.53,
+      6.28,
+      5.65
+    ],
+    "danger_level": 12.55,
+    "recorded_highest_level": 14.79,
+    "station_name": "Parshuram",
+    "river": "Muhuri"
+  },
+  "SW213": {
+    "monthly_profile": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "danger_level": 0.0,
+    "recorded_highest_level": 0.0,
+    "station_name": "Haripur_C",
+    "river": "Muhuri"
+  },
+  "SW257.5": {
+    "monthly_profile": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "danger_level": 0.0,
+    "recorded_highest_level": 0.0,
+    "station_name": "Suber Bazar",
+    "river": "Selonia"
+  },
+  "SW257": {
+    "monthly_profile": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "danger_level": 0.0,
+    "recorded_highest_level": 0.0,
+    "station_name": "Malipur_C",
+    "river": "Selonia"
+  },
+  "SW84": {
+    "monthly_profile": [
+      6.76,
+      5.91,
+      7.6,
+      9.29,
+      11.83,
+      14.36,
+      16.05,
+      15.55,
+      13.52,
+      10.14,
+      8.45,
+      7.6
+    ],
+    "danger_level": 16.9,
+    "recorded_highest_level": 19.85,
+    "station_name": "Ramgarh",
+    "river": "Feni"
+  },
+  "SW86": {
+    "monthly_profile": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "danger_level": 0.0,
+    "recorded_highest_level": 0.0,
+    "station_name": "Shuvopur",
+    "river": "Feni"
+  },
+  "SW87": {
+    "monthly_profile": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "danger_level": 0.0,
+    "recorded_highest_level": 0.0,
+    "station_name": "Sonapur",
+    "river": "Feni"
+  },
+  "SW222": {
+    "monthly_profile": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "danger_level": 0.0,
+    "recorded_highest_level": 0.0,
+    "station_name": "Noakhali",
+    "river": "Noakhali Khal"
+  },
+  "SW239": {
+    "monthly_profile": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "danger_level": 0.0,
+    "recorded_highest_level": 0.0,
+    "station_name": "Lakshmipur",
+    "river": "Rahmat Khali Khal"
+  },
+  "SW182": {
+    "monthly_profile": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "danger_level": 0.0,
+    "recorded_highest_level": 0.0,
+    "station_name": "Companyganj",
+    "river": "Little Feni Dakatia"
+  },
+  "SW117": {
+    "monthly_profile": [
+      5.92,
+      5.18,
+      6.66,
+      8.14,
+      10.36,
+      12.58,
+      14.06,
+      13.62,
+      11.84,
+      8.88,
+      7.4,
+      6.66
+    ],
+    "danger_level": 14.8,
+    "recorded_highest_level": 16.92,
+    "station_name": "Narayanhat",
+    "river": "Halda"
+  },
+  "SW119.1": {
+    "monthly_profile": [
+      3.62,
+      3.17,
+      4.07,
+      4.98,
+      6.33,
+      7.69,
+      8.6,
+      8.33,
+      7.24,
+      5.43,
+      4.53,
+      4.07
+    ],
+    "danger_level": 9.05,
+    "recorded_highest_level": 11.46,
+    "station_name": "Panchpukuria",
+    "river": "Halda"
+  },
+  "SW152.2": {
+    "monthly_profile": [
+      1.66,
+      1.45,
+      1.87,
+      2.28,
+      2.91,
+      3.53,
+      3.94,
+      3.82,
+      3.32,
+      2.49,
+      2.08,
+      1.87
+    ],
+    "danger_level": 4.15,
+    "recorded_highest_level": 4.52,
+    "station_name": "Chattogram",
+    "river": "Karnaphuli"
+  },
+  "SW247": {
+    "monthly_profile": [
+      5.92,
+      5.18,
+      6.66,
+      8.14,
+      10.36,
+      12.58,
+      14.06,
+      13.62,
+      11.84,
+      8.88,
+      7.4,
+      6.66
+    ],
+    "danger_level": 14.8,
+    "recorded_highest_level": 20.34,
+    "station_name": "Bandarban",
+    "river": "Sangu"
+  },
+  "SW248": {
+    "monthly_profile": [
+      2.62,
+      2.29,
+      2.95,
+      3.6,
+      4.58,
+      5.57,
+      6.22,
+      6.03,
+      5.24,
+      3.93,
+      3.27,
+      2.95
+    ],
+    "danger_level": 6.55,
+    "recorded_highest_level": 7.63,
+    "station_name": "Dohazari",
+    "river": "Sangu"
+  },
+  "SW203": {
+    "monthly_profile": [
+      4.72,
+      4.13,
+      5.31,
+      6.49,
+      8.26,
+      10.03,
+      11.21,
+      10.86,
+      9.44,
+      7.08,
+      5.9,
+      5.31
+    ],
+    "danger_level": 11.8,
+    "recorded_highest_level": 14.92,
+    "station_name": "Lama",
+    "river": "Matamuhuri"
+  },
+  "SW204": {
+    "monthly_profile": [
+      2.32,
+      2.03,
+      2.61,
+      3.19,
+      4.06,
+      4.93,
+      5.51,
+      5.34,
+      4.64,
+      3.48,
+      2.9,
+      2.61
+    ],
+    "danger_level": 5.8,
+    "recorded_highest_level": 7.28,
+    "station_name": "Chiringa",
+    "river": "Matamuhuri"
+  }
+}

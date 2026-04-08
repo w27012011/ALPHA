@@ -1,0 +1,1 @@
+{"event_id": "usgs_mega_mock_8_2", "magnitude": 8.2, "depth_km": 15.0, "lat": 24.89, "lon": 91.87, "place_description": "2km E of Sylhet, Bangladesh", "event_time": "2026-04-05T06:14:57.775838+00:00Z", "distance_to_bangladesh_km": 0.0, "felt_in_bangladesh": true, "pga_estimate_g": 0.85, "data_source": "USGS_MOCK", "timestamp": "2026-04-05T06:14:57.775838+00:00Z"}

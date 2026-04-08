@@ -1,0 +1,4 @@
+station_id,station_name,river,lat,lon,district,water_level_m,danger_level_m,trend
+SW93.5L,Sirajganj,Jamuna,24.45,89.70,Sirajganj,14.50,13.35,RISING
+SW292,Chilmari,Brahmaputra,25.55,89.68,Kurigram,25.10,24.00,RISING
+SW273.5,Sylhet,Surma,24.88,91.87,Sylhet,11.80,10.80,STEADY

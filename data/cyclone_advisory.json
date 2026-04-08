@@ -1,0 +1,9 @@
+{
+  "cyclone_id": "BOB-01-MOCK",
+  "name": "TEST_STORM",
+  "category": "DEPRESSION",
+  "track_lat": 18.0,
+  "track_lon": 89.0,
+  "sustained_wind_kmh": 60.0,
+  "timestamp_utc": "2026-04-02T17:39:56.397457Z"
+}

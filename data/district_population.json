@@ -1,0 +1,322 @@
+{
+  "Barguna": {
+    "population": 1010531,
+    "division": "Barishal",
+    "geocode": "4"
+  },
+  "Bagerhat": {
+    "population": 1613076,
+    "division": "Khulna",
+    "geocode": "1"
+  },
+  "Barishal": {
+    "population": 2570446,
+    "division": "Barishal",
+    "geocode": "6"
+  },
+  "Bhola": {
+    "population": 1932518,
+    "division": "Barishal",
+    "geocode": "9"
+  },
+  "Jhalokati": {
+    "population": 661160,
+    "division": "Barishal",
+    "geocode": "42"
+  },
+  "Bandarban": {
+    "population": 481106,
+    "division": "Chattogram",
+    "geocode": "3"
+  },
+  "Patuakhali": {
+    "population": 1727254,
+    "division": "Barishal",
+    "geocode": "78"
+  },
+  "Pirojpur": {
+    "population": 1198195,
+    "division": "Barishal",
+    "geocode": "79"
+  },
+  "Brahmanbaria": {
+    "population": 3306563,
+    "division": "Chattogram",
+    "geocode": "12"
+  },
+  "Chandpur": {
+    "population": 2635748,
+    "division": "Chattogram",
+    "geocode": "13"
+  },
+  "Bogura": {
+    "population": 3734297,
+    "division": "Rajshahi",
+    "geocode": "10"
+  },
+  "Chattogram": {
+    "population": 9169465,
+    "division": "Chattogram",
+    "geocode": "15"
+  },
+  "Cumilla": {
+    "population": 2823268,
+    "division": "Chattogram",
+    "geocode": "19"
+  },
+  "Cox's Bazar": {
+    "population": 6212216,
+    "division": "Chattogram",
+    "geocode": "22"
+  },
+  "Feni": {
+    "population": 1648896,
+    "division": "Chattogram",
+    "geocode": "30"
+  },
+  "Khagrachhari": {
+    "population": 714119,
+    "division": "Chattogram",
+    "geocode": "46"
+  },
+  "Lakshmipur": {
+    "population": 1937948,
+    "division": "Chattogram",
+    "geocode": "51"
+  },
+  "Chuadanga": {
+    "population": 1234054,
+    "division": "Khulna",
+    "geocode": "18"
+  },
+  "Noakhali": {
+    "population": 3625442,
+    "division": "Chattogram",
+    "geocode": "75"
+  },
+  "Rangamati": {
+    "population": 647586,
+    "division": "Chattogram",
+    "geocode": "84"
+  },
+  "Dhaka": {
+    "population": 14734701,
+    "division": "Dhaka",
+    "geocode": "26"
+  },
+  "Faridpur": {
+    "population": 2162879,
+    "division": "Dhaka",
+    "geocode": "29"
+  },
+  "Gazipur": {
+    "population": 5263450,
+    "division": "Dhaka",
+    "geocode": "33"
+  },
+  "Gopalganj": {
+    "population": 1295057,
+    "division": "Dhaka",
+    "geocode": "35"
+  },
+  "Kishoreganj": {
+    "population": 3267626,
+    "division": "Dhaka",
+    "geocode": "48"
+  },
+  "Madaripur": {
+    "population": 1293027,
+    "division": "Dhaka",
+    "geocode": "54"
+  },
+  "Dinajpur": {
+    "population": 3315236,
+    "division": "Rangpur",
+    "geocode": "27"
+  },
+  "Manikganj": {
+    "population": 1558025,
+    "division": "Dhaka",
+    "geocode": "56"
+  },
+  "Munshiganj": {
+    "population": 1625416,
+    "division": "Dhaka",
+    "geocode": "59"
+  },
+  "Chapainababganj": {
+    "population": 956431,
+    "division": "Rajshahi",
+    "geocode": "70"
+  },
+  "Narayanganj": {
+    "population": 3909138,
+    "division": "Dhaka",
+    "geocode": "67"
+  },
+  "Narsingdi": {
+    "population": 2584452,
+    "division": "Dhaka",
+    "geocode": "68"
+  },
+  "Rajbari": {
+    "population": 1189818,
+    "division": "Dhaka",
+    "geocode": "82"
+  },
+  "Shariatpur": {
+    "population": 1294562,
+    "division": "Dhaka",
+    "geocode": "86"
+  },
+  "Gaibandha": {
+    "population": 2562233,
+    "division": "Rangpur",
+    "geocode": "32"
+  },
+  "Tangail": {
+    "population": 4037608,
+    "division": "Dhaka",
+    "geocode": "93"
+  },
+  "Jashore": {
+    "population": 3076144,
+    "division": "Khulna",
+    "geocode": "41"
+  },
+  "Jhenaidah": {
+    "population": 2005849,
+    "division": "Khulna",
+    "geocode": "44"
+  },
+  "Habiganj": {
+    "population": 2358886,
+    "division": "Sylhet",
+    "geocode": "36"
+  },
+  "Khulna": {
+    "population": 2613385,
+    "division": "Khulna",
+    "geocode": "47"
+  },
+  "Kushtia": {
+    "population": 2149692,
+    "division": "Khulna",
+    "geocode": "50"
+  },
+  "Jamalpur": {
+    "population": 2499738,
+    "division": "Mymensingh",
+    "geocode": "39"
+  },
+  "Magura": {
+    "population": 1033115,
+    "division": "Khulna",
+    "geocode": "55"
+  },
+  "Meherpur": {
+    "population": 705356,
+    "division": "Khulna",
+    "geocode": "57"
+  },
+  "Narail": {
+    "population": 788671,
+    "division": "Khulna",
+    "geocode": "65"
+  },
+  "Satkhira": {
+    "population": 2196582,
+    "division": "Khulna",
+    "geocode": "87"
+  },
+  "Mymensingh": {
+    "population": 5899005,
+    "division": "Mymensingh",
+    "geocode": "61"
+  },
+  "Joypurhat": {
+    "population": 2784599,
+    "division": "Rajshahi",
+    "geocode": "38"
+  },
+  "Netrakona": {
+    "population": 2324853,
+    "division": "Mymensingh",
+    "geocode": "72"
+  },
+  "Sherpur": {
+    "population": 1501853,
+    "division": "Mymensingh",
+    "geocode": "89"
+  },
+  "Naogaon": {
+    "population": 1859922,
+    "division": "Rajshahi",
+    "geocode": "64"
+  },
+  "Natore": {
+    "population": 1835528,
+    "division": "Rajshahi",
+    "geocode": "69"
+  },
+  "Kurigram": {
+    "population": 2329160,
+    "division": "Rangpur",
+    "geocode": "49"
+  },
+  "Pabna": {
+    "population": 2909624,
+    "division": "Rajshahi",
+    "geocode": "76"
+  },
+  "Rajshahi": {
+    "population": 2915009,
+    "division": "Rajshahi",
+    "geocode": "81"
+  },
+  "Lalmonirhat": {
+    "population": 1428406,
+    "division": "Rangpur",
+    "geocode": "52"
+  },
+  "Sirajganj": {
+    "population": 3357706,
+    "division": "Rajshahi",
+    "geocode": "88"
+  },
+  "Moulvibazar": {
+    "population": 2123447,
+    "division": "Sylhet",
+    "geocode": "58"
+  },
+  "Nilphamari": {
+    "population": 2092568,
+    "division": "Rangpur",
+    "geocode": "73"
+  },
+  "Panchagarh": {
+    "population": 1179843,
+    "division": "Rangpur",
+    "geocode": "77"
+  },
+  "Rangpur": {
+    "population": 3169614,
+    "division": "Rangpur",
+    "geocode": "85"
+  },
+  "Thakurgaon": {
+    "population": 1533895,
+    "division": "Rangpur",
+    "geocode": "94"
+  },
+  "Sunamganj": {
+    "population": 2695496,
+    "division": "Sylhet",
+    "geocode": "90"
+  },
+  "Sylhet": {
+    "population": 3857123,
+    "division": "Sylhet",
+    "geocode": "91"
+  }
+}

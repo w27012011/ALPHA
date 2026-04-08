@@ -1,0 +1,107 @@
+{
+    "Bahadurabad": {
+        "river": "Jamuna",
+        "danger_level": 19.5,
+        "water_level": 18.2,
+        "status": "NORMAL",
+        "source": "OFFLINE_ARCHIVE"
+    },
+    "Aricha": {
+        "river": "Padma",
+        "danger_level": 9.4,
+        "water_level": 8.1,
+        "status": "NORMAL",
+        "source": "OFFLINE_ARCHIVE"
+    },
+    "Hardinge Bridge": {
+        "river": "Ganges",
+        "danger_level": 14.25,
+        "water_level": 12.8,
+        "status": "NORMAL",
+        "source": "OFFLINE_ARCHIVE"
+    },
+    "Goalunda": {
+        "river": "Padma",
+        "danger_level": 8.65,
+        "water_level": 7.5,
+        "status": "NORMAL",
+        "source": "OFFLINE_ARCHIVE"
+    },
+    "Bhagyakul": {
+        "river": "Padma",
+        "danger_level": 6.3,
+        "water_level": 5.2,
+        "status": "NORMAL",
+        "source": "OFFLINE_ARCHIVE"
+    },
+    "Dhaka": {
+        "river": "Buriganga",
+        "danger_level": 6.0,
+        "water_level": 4.5,
+        "status": "NORMAL",
+        "source": "OFFLINE_ARCHIVE"
+    },
+    "Demra": {
+        "river": "Lakhya",
+        "danger_level": 5.75,
+        "water_level": 4.8,
+        "status": "NORMAL",
+        "source": "OFFLINE_ARCHIVE"
+    },
+    "Narayanganj": {
+        "river": "Lakhya",
+        "danger_level": 5.5,
+        "water_level": 4.2,
+        "status": "NORMAL",
+        "source": "OFFLINE_ARCHIVE"
+    },
+    "Chandpur": {
+        "river": "Meghna",
+        "danger_level": 4.0,
+        "water_level": 3.1,
+        "status": "NORMAL",
+        "source": "OFFLINE_ARCHIVE"
+    },
+    "Sylhet": {
+        "river": "Surma",
+        "danger_level": 11.25,
+        "water_level": 9.8,
+        "status": "NORMAL",
+        "source": "OFFLINE_ARCHIVE"
+    },
+    "Kanairghat": {
+        "river": "Surma",
+        "danger_level": 13.2,
+        "water_level": 12.1,
+        "status": "NORMAL",
+        "source": "OFFLINE_ARCHIVE"
+    },
+    "Sunamganj": {
+        "river": "Surma",
+        "danger_level": 8.25,
+        "water_level": 7.3,
+        "status": "NORMAL",
+        "source": "OFFLINE_ARCHIVE"
+    },
+    "Chhatak": {
+        "river": "Surma",
+        "danger_level": 8.13,
+        "water_level": 7.0,
+        "status": "NORMAL",
+        "source": "OFFLINE_ARCHIVE"
+    },
+    "Sheola": {
+        "river": "Kushiyara",
+        "danger_level": 13.05,
+        "water_level": 11.5,
+        "status": "NORMAL",
+        "source": "OFFLINE_ARCHIVE"
+    },
+    "Sherpur-Sylhet": {
+        "river": "Kushiyara",
+        "danger_level": 9.0,
+        "water_level": 7.8,
+        "status": "NORMAL",
+        "source": "OFFLINE_ARCHIVE"
+    }
+}

@@ -1,0 +1,368 @@
+{
+  "Lakshmipur": {
+    "avg_arsenic_ugl": 178.86,
+    "max_arsenic_ugl": 816.0,
+    "risk_level": "CRITICAL",
+    "sample_count": 34
+  },
+  "Faridpur": {
+    "avg_arsenic_ugl": 140.05,
+    "max_arsenic_ugl": 924.0,
+    "risk_level": "CRITICAL",
+    "sample_count": 63
+  },
+  "Nawabganj": {
+    "avg_arsenic_ugl": 6.56,
+    "max_arsenic_ugl": 63.9,
+    "risk_level": "LOW",
+    "sample_count": 45
+  },
+  "Narayanganj": {
+    "avg_arsenic_ugl": 48.43,
+    "max_arsenic_ugl": 324.0,
+    "risk_level": "MODERATE",
+    "sample_count": 30
+  },
+  "Manikganj": {
+    "avg_arsenic_ugl": 23.99,
+    "max_arsenic_ugl": 89.0,
+    "risk_level": "MODERATE",
+    "sample_count": 47
+  },
+  "Dhaka": {
+    "avg_arsenic_ugl": 41.04,
+    "max_arsenic_ugl": 262.0,
+    "risk_level": "MODERATE",
+    "sample_count": 45
+  },
+  "Khulna": {
+    "avg_arsenic_ugl": 35.16,
+    "max_arsenic_ugl": 538.0,
+    "risk_level": "MODERATE",
+    "sample_count": 76
+  },
+  "Satkhira": {
+    "avg_arsenic_ugl": 133.06,
+    "max_arsenic_ugl": 509.0,
+    "risk_level": "CRITICAL",
+    "sample_count": 61
+  },
+  "Bagerhat": {
+    "avg_arsenic_ugl": 156.19,
+    "max_arsenic_ugl": 635.0,
+    "risk_level": "CRITICAL",
+    "sample_count": 62
+  },
+  "Magura": {
+    "avg_arsenic_ugl": 28.02,
+    "max_arsenic_ugl": 216.0,
+    "risk_level": "MODERATE",
+    "sample_count": 32
+  },
+  "Jessore": {
+    "avg_arsenic_ugl": 69.8,
+    "max_arsenic_ugl": 355.0,
+    "risk_level": "CRITICAL",
+    "sample_count": 69
+  },
+  "Chuadanga": {
+    "avg_arsenic_ugl": 79.4,
+    "max_arsenic_ugl": 538.0,
+    "risk_level": "CRITICAL",
+    "sample_count": 34
+  },
+  "Jhenaidah": {
+    "avg_arsenic_ugl": 46.27,
+    "max_arsenic_ugl": 557.0,
+    "risk_level": "MODERATE",
+    "sample_count": 54
+  },
+  "Kushtia": {
+    "avg_arsenic_ugl": 103.9,
+    "max_arsenic_ugl": 1660.0,
+    "risk_level": "CRITICAL",
+    "sample_count": 47
+  },
+  "Narail": {
+    "avg_arsenic_ugl": 88.37,
+    "max_arsenic_ugl": 255.0,
+    "risk_level": "CRITICAL",
+    "sample_count": 24
+  },
+  "Meherpur": {
+    "avg_arsenic_ugl": 115.81,
+    "max_arsenic_ugl": 482.0,
+    "risk_level": "CRITICAL",
+    "sample_count": 15
+  },
+  "Patuakhali": {
+    "avg_arsenic_ugl": 2.78,
+    "max_arsenic_ugl": 17.4,
+    "risk_level": "LOW",
+    "sample_count": 42
+  },
+  "Barisal": {
+    "avg_arsenic_ugl": 92.39,
+    "max_arsenic_ugl": 862.0,
+    "risk_level": "CRITICAL",
+    "sample_count": 92
+  },
+  "Barguna": {
+    "avg_arsenic_ugl": 1.26,
+    "max_arsenic_ugl": 11.0,
+    "risk_level": "LOW",
+    "sample_count": 33
+  },
+  "Pirojpur": {
+    "avg_arsenic_ugl": 29.83,
+    "max_arsenic_ugl": 270.0,
+    "risk_level": "MODERATE",
+    "sample_count": 47
+  },
+  "Shariatpur": {
+    "avg_arsenic_ugl": 150.84,
+    "max_arsenic_ugl": 590.0,
+    "risk_level": "CRITICAL",
+    "sample_count": 49
+  },
+  "Jhalakati": {
+    "avg_arsenic_ugl": 23.42,
+    "max_arsenic_ugl": 550.0,
+    "risk_level": "MODERATE",
+    "sample_count": 33
+  },
+  "Gopalganj": {
+    "avg_arsenic_ugl": 186.91,
+    "max_arsenic_ugl": 602.0,
+    "risk_level": "CRITICAL",
+    "sample_count": 42
+  },
+  "Rajbari": {
+    "avg_arsenic_ugl": 48.7,
+    "max_arsenic_ugl": 359.0,
+    "risk_level": "MODERATE",
+    "sample_count": 34
+  },
+  "Rajshahi": {
+    "avg_arsenic_ugl": 7.56,
+    "max_arsenic_ugl": 91.8,
+    "risk_level": "LOW",
+    "sample_count": 78
+  },
+  "Natore": {
+    "avg_arsenic_ugl": 1.27,
+    "max_arsenic_ugl": 17.8,
+    "risk_level": "LOW",
+    "sample_count": 51
+  },
+  "Pabna": {
+    "avg_arsenic_ugl": 32.26,
+    "max_arsenic_ugl": 493.0,
+    "risk_level": "MODERATE",
+    "sample_count": 78
+  },
+  "Comilla": {
+    "avg_arsenic_ugl": 141.64,
+    "max_arsenic_ugl": 698.0,
+    "risk_level": "CRITICAL",
+    "sample_count": 110
+  },
+  "Chandpur": {
+    "avg_arsenic_ugl": 365.58,
+    "max_arsenic_ugl": 1090.0,
+    "risk_level": "CRITICAL",
+    "sample_count": 59
+  },
+  "Bhola": {
+    "avg_arsenic_ugl": 10.12,
+    "max_arsenic_ugl": 239.0,
+    "risk_level": "MODERATE",
+    "sample_count": 48
+  },
+  "Noakhali": {
+    "avg_arsenic_ugl": 162.16,
+    "max_arsenic_ugl": 649.0,
+    "risk_level": "CRITICAL",
+    "sample_count": 49
+  },
+  "Feni": {
+    "avg_arsenic_ugl": 53.6,
+    "max_arsenic_ugl": 420.0,
+    "risk_level": "CRITICAL",
+    "sample_count": 53
+  },
+  "Chittagong": {
+    "avg_arsenic_ugl": 31.59,
+    "max_arsenic_ugl": 344.0,
+    "risk_level": "MODERATE",
+    "sample_count": 44
+  },
+  "Cox's Bazar": {
+    "avg_arsenic_ugl": 3.26,
+    "max_arsenic_ugl": 70.1,
+    "risk_level": "LOW",
+    "sample_count": 43
+  },
+  "Maulvibazar": {
+    "avg_arsenic_ugl": 20.43,
+    "max_arsenic_ugl": 254.0,
+    "risk_level": "MODERATE",
+    "sample_count": 53
+  },
+  "Sylhet": {
+    "avg_arsenic_ugl": 22.4,
+    "max_arsenic_ugl": 157.0,
+    "risk_level": "MODERATE",
+    "sample_count": 77
+  },
+  "Sunamganj": {
+    "avg_arsenic_ugl": 47.96,
+    "max_arsenic_ugl": 246.0,
+    "risk_level": "MODERATE",
+    "sample_count": 71
+  },
+  "Habiganj": {
+    "avg_arsenic_ugl": 22.47,
+    "max_arsenic_ugl": 320.0,
+    "risk_level": "MODERATE",
+    "sample_count": 59
+  },
+  "Brahamanbaria": {
+    "avg_arsenic_ugl": 101.4,
+    "max_arsenic_ugl": 735.0,
+    "risk_level": "CRITICAL",
+    "sample_count": 53
+  },
+  "Munshiganj": {
+    "avg_arsenic_ugl": 188.65,
+    "max_arsenic_ugl": 529.0,
+    "risk_level": "CRITICAL",
+    "sample_count": 46
+  },
+  "Madaripur": {
+    "avg_arsenic_ugl": 191.48,
+    "max_arsenic_ugl": 627.0,
+    "risk_level": "CRITICAL",
+    "sample_count": 36
+  },
+  "Kishoreganj": {
+    "avg_arsenic_ugl": 52.24,
+    "max_arsenic_ugl": 573.0,
+    "risk_level": "CRITICAL",
+    "sample_count": 107
+  },
+  "Mymensingh": {
+    "avg_arsenic_ugl": 15.93,
+    "max_arsenic_ugl": 200.0,
+    "risk_level": "MODERATE",
+    "sample_count": 108
+  },
+  "Tangail": {
+    "avg_arsenic_ugl": 20.19,
+    "max_arsenic_ugl": 153.0,
+    "risk_level": "MODERATE",
+    "sample_count": 91
+  },
+  "Gazipur": {
+    "avg_arsenic_ugl": 4.09,
+    "max_arsenic_ugl": 155.0,
+    "risk_level": "LOW",
+    "sample_count": 44
+  },
+  "Bogra": {
+    "avg_arsenic_ugl": 17.64,
+    "max_arsenic_ugl": 632.0,
+    "risk_level": "MODERATE",
+    "sample_count": 94
+  },
+  "Kurigram": {
+    "avg_arsenic_ugl": 21.62,
+    "max_arsenic_ugl": 420.0,
+    "risk_level": "MODERATE",
+    "sample_count": 77
+  },
+  "Lalmonirhat": {
+    "avg_arsenic_ugl": 1.41,
+    "max_arsenic_ugl": 15.7,
+    "risk_level": "LOW",
+    "sample_count": 39
+  },
+  "Nilphamari": {
+    "avg_arsenic_ugl": 2.08,
+    "max_arsenic_ugl": 22.8,
+    "risk_level": "LOW",
+    "sample_count": 53
+  },
+  "Panchagarh": {
+    "avg_arsenic_ugl": 2.53,
+    "max_arsenic_ugl": 33.8,
+    "risk_level": "LOW",
+    "sample_count": 39
+  },
+  "Thakurgaon": {
+    "avg_arsenic_ugl": 0.91,
+    "max_arsenic_ugl": 6.5,
+    "risk_level": "LOW",
+    "sample_count": 46
+  },
+  "Jaipurhat": {
+    "avg_arsenic_ugl": 1.36,
+    "max_arsenic_ugl": 12.6,
+    "risk_level": "LOW",
+    "sample_count": 40
+  },
+  "Netrokona": {
+    "avg_arsenic_ugl": 40.19,
+    "max_arsenic_ugl": 262.0,
+    "risk_level": "MODERATE",
+    "sample_count": 76
+  },
+  "Sherpur": {
+    "avg_arsenic_ugl": 22.23,
+    "max_arsenic_ugl": 168.0,
+    "risk_level": "MODERATE",
+    "sample_count": 51
+  },
+  "Jamalpur": {
+    "avg_arsenic_ugl": 14.3,
+    "max_arsenic_ugl": 230.0,
+    "risk_level": "MODERATE",
+    "sample_count": 63
+  },
+  "Narsingdi": {
+    "avg_arsenic_ugl": 41.32,
+    "max_arsenic_ugl": 284.0,
+    "risk_level": "MODERATE",
+    "sample_count": 56
+  },
+  "Sirajganj": {
+    "avg_arsenic_ugl": 30.77,
+    "max_arsenic_ugl": 384.0,
+    "risk_level": "MODERATE",
+    "sample_count": 89
+  },
+  "Gaibandha": {
+    "avg_arsenic_ugl": 21.56,
+    "max_arsenic_ugl": 708.0,
+    "risk_level": "MODERATE",
+    "sample_count": 71
+  },
+  "Rangpur": {
+    "avg_arsenic_ugl": 8.19,
+    "max_arsenic_ugl": 298.0,
+    "risk_level": "LOW",
+    "sample_count": 86
+  },
+  "Dinajpur": {
+    "avg_arsenic_ugl": 2.85,
+    "max_arsenic_ugl": 54.2,
+    "risk_level": "LOW",
+    "sample_count": 94
+  },
+  "Naogaon": {
+    "avg_arsenic_ugl": 5.85,
+    "max_arsenic_ugl": 244.0,
+    "risk_level": "LOW",
+    "sample_count": 92
+  }
+}
